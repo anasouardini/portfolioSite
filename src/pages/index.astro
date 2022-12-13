@@ -1,4 +1,12 @@
 ---
+import '../index.css'
+
+import SharedLayout from '../components/sharedLayout.astro';
+import Hero from '../components/hero.astro';
+import About from '../components/about.astro';
+import Skills from '../components/skills.astro';
+import Portfolio from '../components/portfolio.astro';
+import Contact from '../components/contact.astro';
 ---
 
 <html lang="en">
@@ -9,7 +17,13 @@
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body>
-		<h1>Astro</h1>
+	<body class="text-white bg-gray-900">
+		<SharedLayout>
+			<Hero/>
+			<About/>
+			<Skills/>
+			<Portfolio/>
+			<Contact/>
+		</SharedLayout>
 	</body>
 </html>

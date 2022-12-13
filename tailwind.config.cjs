@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
-    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+    content: ['index.astro', './src/**/*.{js,ts,jsx,tsx,html,astro}'],
     theme: {
         extend: {
             colors: {
@@ -8,6 +9,9 @@ module.exports = {
                 dark: '#191919',
             },
             boxShadow: {'2xl': '0 0px 20px 30px rgb(0 0 0 / .4)'},
+            spacing: {
+                main: '10%',
+            },
         },
         screens: {
             'sm>': {max: '640px'},

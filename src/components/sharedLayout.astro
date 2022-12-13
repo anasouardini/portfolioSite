@@ -1,0 +1,19 @@
+---
+const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-primary'}
+---
+
+    <header class="flex px-[4%] py-4">
+      <div class="text-primary font-bold tracking-widest">SEGFAULTY</div>
+      <nav class="ml-auto">
+        <ul class="flex gap-3">
+          <li><a href="#about" class={classes.link}>About</a></li>
+        <li><a href="#skills" class={classes.link}>Skills</a></li>
+        <li><a href="#portfolio" class={classes.link}>Portfolio</a></li>
+        <li><a href="#contact" class={classes.link}>Contact</a></li>
+      </ul>
+      </nav>
+    </header>
+
+    <slot />
+
+    <footer class="px-[4%] pt-20 text-center">CopyRight © 2022 segfaulty | All Rights Reserved</footer>
