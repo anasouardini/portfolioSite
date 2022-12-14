@@ -1,3 +1,7 @@
+---
+const classes = {skillBox: 'border-2 border-primary py-1 px-3 rounded-lg text-primary uppercase'}
+---
+    
     <section  class='text-slate-50  pt-[6rem] px-main'>
       
         <h2 class={`text-center text-2xl pb-[3rem] relative
@@ -6,4 +10,17 @@
                     before:w-[2.3rem] before:h-[38px]`}>
                     My <span class="text-primary">Skills</span> 
         </h2>
+        <div class="flex gap-4 flex-wrap max-w-md mx-auto">
+          <div class={classes.skillBox}>html</div>
+          <div class={classes.skillBox}>css</div>
+          <div class={classes.skillBox}>tailwind</div>
+          <div class={classes.skillBox}>js</div>
+          <div class={classes.skillBox}>react</div>
+          <div class={classes.skillBox}>nodejs</div>
+          <div class={classes.skillBox}>expressjs</div>
+          <div class={classes.skillBox}>vite</div>
+          <div class={classes.skillBox}>webpack</div>
+          <div class={classes.skillBox}>Git</div>
+          <div class={classes.skillBox}>Github</div>
+        </div>
       </section>
