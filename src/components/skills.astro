@@ -1,26 +1,56 @@
 ---
-const classes = {skillBox: 'border-2 border-primary py-1 px-3 rounded-lg text-primary uppercase'}
+import Icon from 'astro-icon';
+const classes = {};
+
+const skills = [
+    ['html', 'mdi:language-html5'],
+    ['css', 'mdi:language-css3'],
+    ['tailwind', 'mdi:tailwind'],
+    ['javascript', 'mdi:language-javascript'],
+    ['react', 'mdi:react'],
+    ['nodejs', 'mdi:nodejs'],
+    ['expressjs', 'simple-icons:express'],
+    ['vite', 'file-icons:vite'],
+    ['webpack', 'mdi:webpack'],
+    ['Git', 'mdi:git'],
+    ['Github', 'mdi:github'],
+    // ['Mysql', 'grommet-icons:mysql'],
+    // not colorable
+    // ['astrojs', 'simple-icons:astro'],
+    //not needed
+    // ['neovim', 'simple-icons:neovim'],
+    // ['debian', 'grommet-icons:debian'],
+];
 ---
-    
-    <section  class='text-slate-50  pt-[6rem] px-main'>
-      
-        <h2 class={`text-center text-2xl pb-[3rem] relative
-                    before:absolute
-                    before:border-b-2 before:border-b-primary
-                    before:w-[2.3rem] before:h-[38px]`}>
-                    My <span class="text-primary">Skills</span> 
-        </h2>
-        <div class="flex gap-4 flex-wrap max-w-md mx-auto">
-          <div class={classes.skillBox}>html</div>
-          <div class={classes.skillBox}>css</div>
-          <div class={classes.skillBox}>tailwind</div>
-          <div class={classes.skillBox}>js</div>
-          <div class={classes.skillBox}>react</div>
-          <div class={classes.skillBox}>nodejs</div>
-          <div class={classes.skillBox}>expressjs</div>
-          <div class={classes.skillBox}>vite</div>
-          <div class={classes.skillBox}>webpack</div>
-          <div class={classes.skillBox}>Git</div>
-          <div class={classes.skillBox}>Github</div>
-        </div>
-      </section>
+
+<section class="text-slate-50 pt-[6rem] px-main">
+    <h2
+        class={`text-center capitalize text-2xl pb-[3rem] relative
+              before:absolute
+              before:border-b-2 before:border-b-primary
+              before:w-[2.3rem] before:h-[38px]`}
+    >
+        My <span class="text-primary">back pack</span>
+    </h2>
+
+    <style>
+        .skillsGrid {
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        }
+    </style>
+    <div class="skillsGrid grid gap-5 max-w-lg mx-auto">
+        {
+            skills.map((skill) => {
+                return (
+                    <div
+                        class={`flex flex-no-wrap border-[1px] border-primary pt-[6px] pb-[4px]
+                          px-3 rounded-lg text-primary uppercase`}
+                    >
+                        <Icon class="text-primary h-7" name={skill[1]} />
+                        <span class="text-white ml-2">{skill[0]}</span>
+                    </div>
+                );
+            })
+        }
+    </div>
+</section>

@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  background-color: black
+section{
+  @apply max-w-[1200px] mx-auto
 }

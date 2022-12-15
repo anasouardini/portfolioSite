@@ -1,54 +1,71 @@
 ---
-
+// type sharedT = {hostingAddress: string, sourceCodeAddress: string, mediaAddress: string}
 const shared = {
-  hostingAddress: 'https://segfaulty.netlify.',
-  sourceCodeAddress: 'https://wwww.github.com/segfaulty',
-  mediaAddress: './media/projects'
-}
+    hostingAddress: 'https://segfaulty.netlify.',
+    sourceCodeAddress: 'https://wwww.github.com/segfaulty',
+    mediaAddress: './media/projects',
+};
 
-const projectItems = [
-  {
+type projectItemsT = {
     card: {
-      title: 'SnipShare - snippet sharing',
-      mediaLink: `${shared.mediaAddress}/snipshare.jpeg`,
-      previewLink: `${shared.hostingAddress}/snipshare`,
-      sourceCodeLink: `${shared.sourceCodeAddress}/snipeshare`,
-    },
+        title: string;
+        mediaLink: string;
+        previewLink: string;
+        sourceCodeLink: string;
+    };
     details: {
-      idea: `The idea of this app is that code snippets of any programming language could be
+        idea: string;
+        obstacles: string[];
+        tools: string[];
+    };
+}[];
+const projectItems: projectItemsT = [
+    {
+        card: {
+            title: 'SnipShare - snippet sharing',
+            mediaLink: `${shared.mediaAddress}/snipshare.jpeg`,
+            previewLink: `${shared.hostingAddress}/snipshare`,
+            sourceCodeLink: `${shared.sourceCodeAddress}/snipeshare`,
+        },
+        details: {
+            idea: `The idea of this app is that code snippets of any programming language could be
                 shared around with other developers`,
-      obstacles: ['obstacle 1', 'I refactored the code'],
-      tools: ['html', 'css', 'react', 'nodejs', 'expressjs', 'mysql']
-    }
-  }
+            obstacles: ['obstacle 1', 'I refactored the code'],
+            tools: ['html', 'css', 'react', 'nodejs', 'expressjs', 'mysql'],
+        },
+    },
 ];
-
 ---
 
-<section aria-label="projects" class='text-slate-50  pt-[6rem] px-main'>
-
-  <h2 class={`text-center text-2xl pb-[3rem] relative
+<section aria-label="projects" class="text-slate-50 pt-[6rem] px-main">
+    <h2
+        class={`text-center capitalize text-2xl pb-[3rem] relative
               before:absolute
               before:border-b-2 before:border-b-primary
-              before:w-[2.3rem] before:h-[38px]`}>
-              My <span class="text-primary">Projects</span> 
-  </h2>
+              before:w-[2.3rem] before:h-[38px]`}
+    >
+        My <span class="text-primary">portfolio</span>
+    </h2>
 
-  {projectItems.map((item)=>{
-    return (
-      <>
-      <div aria-label='project box' class='flex gap-6'>
-        <div aria-label='project preview' class='border-primary border-2 rounded-lg py-2 px-4'>
-          <img src={item.card.mediaLink}/>
-          <div></div>
-        </div>
-        <div aria-label='project details' class=''>
-          <h3 class='captitalize' >The Project Idea</h3>
-          <p class='first-letter:uppercase'>{item.details.idea}</p>
-        </div>
-      </div>
-      </>
-    )}
-  )}
-
+    {
+        projectItems.map((item) => {
+            return (
+                <>
+                    <div aria-label="project box" class="flex gap-6">
+                        <div
+                            aria-label="project preview"
+                            class="border-primary border-2 rounded-lg py-2 px-4"
+                        >
+                            <img src={item.card.mediaLink} />
+                            <div />
+                        </div>
+                        <div aria-label="project details" class="">
+                            <h3 class="captitalize">The Project Idea</h3>
+                            <p class="first-letter:uppercase">{item.details.idea}</p>
+                        </div>
+                    </div>
+                </>
+            );
+        })
+    }
 </section>

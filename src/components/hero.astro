@@ -1,13 +1,14 @@
 ---
 import ColorSwitcherTitle from "./colorSwitcher.jsx";
+import Icon from 'astro-icon';
 ---
 
 <section class='px-main pt-[4rem] flex justify-between'>
-  <div>
-    <p class="text-primary uppercase text-xl tracking-wider">I'm segfaulty</p>
+  <div class="z-20 bg-gray-900/90">
+    <p class="text-primary capitalize uppercase text-xl tracking-wider">I'm astronaut</p>
     <!-- an h1 title -->
     <ColorSwitcherTitle client:load title='A Web Engineer'/>
-    <p class="max-w-[25rem] leading-relaxed">
+    <p class="max-w-[25rem] leading-relaxed first-letter:uppercase">
       I write sweat code for the web, with the help of  sweat technologies.
     </p>
     <ul aria-label="socialMedia" class="mt-3">
@@ -16,9 +17,18 @@ import ColorSwitcherTitle from "./colorSwitcher.jsx";
       <li><a href=""></a></li>
     </ul>
     <div class="flex gap-7 mt-8">
-       <button class="text-primary border-primary border-b-2 py-[5px]">Get in Touch</button>
-       <button class="text-primary border-primary border-b-2 py-[5px]">Download resume</button>
+       <button class="text-primary capitalize border-primary border-b-2 py-[5px]">Get in Touch</button>
+       <button class="text-primary capitalize border-primary border-b-2 py-[5px]">Download resume</button>
     </div>
   </div>
-  <div class="border-2">personal pic</div>
+  <style>
+    .astro{
+      right: calc(min(10%, 100px)) /* this doesn't work in tailwind */
+    }
+  </style>
+  <div class="w-[190px] absolute astro">
+    <Icon class='text-primary w-2xl' name='fa-solid:user-astronaut'/>
+    <!-- <Icon class='absolute z-20 w-2xl' name='mdi:fire-circle'/> -->
+    <!-- <Icon class='absolute top-[-120px] left-[-30px] w-[20rem] text-primary' name='mdi:fire'/> -->
+  </div>
 </section>
