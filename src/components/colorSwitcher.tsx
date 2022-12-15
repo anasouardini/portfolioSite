@@ -1,5 +1,7 @@
 import React from 'react';
 
+type colorSwitcherPropsT = {title: string, tailwindStyle: string}
+
 export default function ColorSwitcherTitle(props){
     const indexRef = React.useRef(0);
     const lettersRefs = React.useRef([]);
@@ -23,7 +25,7 @@ export default function ColorSwitcherTitle(props){
         const letters = props.title.split('');
         return letters.map((letter, index)=>{
             const spanKey = letter+letters.at(index+1);
-            return <span key={spanKey} ref={(el)=>{lettersRefs.current.push(el);}}>{letter}</span>
+            return <span key={spanKey} ref={(el)=>{lettersRefs.current.push(el);}} className={props.tailwindStyle}>{letter}</span>
         });
     }
 
