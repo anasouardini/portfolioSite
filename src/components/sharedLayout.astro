@@ -2,8 +2,10 @@
 const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-primary'};
 ---
 
-<header class="flex px-[4%] py-4">
-    <div class="text-primary font-bold tracking-widest uppercase">astronaut</div>
+<header class="flex px-[4%] py-4 sticky z-30 top-0 bg-gray-900/40 backdrop-blur-[7px]">
+    <div class="text-primary font-bold tracking-widest uppercase">
+        <a href="#hero">astronaut</a>
+    </div>
     <nav class="ml-auto">
         <ul class="flex gap-3">
             <li><a href="#about" class={classes.link}>About</a></li>
