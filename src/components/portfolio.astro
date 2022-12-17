@@ -1,45 +1,50 @@
 ---
+import {Image, Picture} from '@astrojs/image/components';
 // type sharedT = {hostingAddress: string, sourceCodeAddress: string, mediaAddress: string}
 const shared = {
     hostingAddress: 'https://segfaulty.netlify.',
     sourceCodeAddress: 'https://wwww.github.com/segfaulty',
-    mediaAddress: './media/projects',
+    mediaAddress: '/media/projects',
 };
 
 type projectItemsT = {
     card: {
-        title: string;
+        width: number;
+        aspectRatio: string;
         mediaLink: string;
         previewLink: string;
         sourceCodeLink: string;
     };
     details: {
+        title: string;
         idea: string;
-        obstacles: string[];
+        obstacles: string[][];
         tools: string[];
     };
 }[];
 const projectItems: projectItemsT = [
     {
         card: {
-            title: 'SnipShare - snippet sharing',
+            width: 400,
+            aspectRatio: '1:1',
             mediaLink: `${shared.mediaAddress}/snipshare.jpeg`,
             previewLink: `${shared.hostingAddress}/snipshare`,
             sourceCodeLink: `${shared.sourceCodeAddress}/snipeshare`,
         },
         details: {
+            title: 'SnipShare - snippet sharing',
             idea: `The idea of this app is that code snippets of any programming language could be
                 shared around with other developers`,
-            obstacles: ['obstacle 1', 'I refactored the code'],
-            tools: ['html', 'css', 'react', 'nodejs', 'expressjs', 'mysql'],
+            obstacles: [['obstacle 1', 'I refactored the code']],
+            tools: ['html', 'css', 'tailwind', 'react', 'nodejs', 'expressjs', 'mysql'],
         },
     },
 ];
 ---
 
-<section aria-label="projects" class="text-slate-50 pt-[6rem] px-main">
+<section id="portfolio" aria-label="projects" class="text-slate-50 pt-[6rem] px-main">
     <h2
-        class={`text-center capitalize text-2xl pb-[3rem] relative
+        class={`text-center capitalize text-2xl relative
               before:absolute
               before:border-b-2 before:border-b-primary
               before:w-[2.3rem] before:h-[38px]`}
@@ -51,17 +56,85 @@ const projectItems: projectItemsT = [
         projectItems.map((item) => {
             return (
                 <>
-                    <div aria-label="project box" class="flex gap-6">
+                    <div
+                        aria-label="project box"
+                        class="flex flex-wrap justify-center gap-6"
+                    >
                         <div
                             aria-label="project preview"
-                            class="border-primary border-2 rounded-lg py-2 px-4"
+                            class="grow basis-0 flex flex-col items-center mt-[3rem]"
                         >
-                            <img src={item.card.mediaLink} />
-                            <div />
+                            <Picture
+                                class="min-w-[280px]"
+                                widths={[400, 600, 800]}
+                                aspectRatio={item.card.aspectRatio}
+                                formats={['webp']}
+                                src={`${item.card.mediaLink}`}
+                                alt="project image"
+                            />
+
+                            {/*
+                            <Image
+                                alt={`project image - ${item.details.title}`}
+                                width={400}
+                                aspectRatio="1.5"
+                                loading="lazy"
+                                src={`${item.card.mediaLink}`}
+                            />
+                                <img src={`${item.card.mediaLink}`} alt="" class="border-2 border-primary w-[400px]"> 
+                            */}
+
+                            <div
+                                aria-label="project buttons"
+                                class="flex gap-4 mt-5 w-min"
+                            >
+                                <button class="w-max border-b-2 border-b-primary text-primary">
+                                    Preview
+                                </button>
+                                <button class="w-max border-b-2 border-b-primary text-primary">
+                                    Source Code
+                                </button>
+                            </div>
                         </div>
-                        <div aria-label="project details" class="">
-                            <h3 class="captitalize">The Project Idea</h3>
-                            <p class="first-letter:uppercase">{item.details.idea}</p>
+                        <div
+                            aria-label="project details"
+                            class="grow basis-0 min-w-[250px] mt-[3rem]"
+                        >
+                            <h3 class="capitalize mb-2 text-xl">{item.details.title}</h3>
+                            <p class="first-letter:uppercase text-gray-400 max-w-md">
+                                {item.details.idea}
+                            </p>
+                            <h4 class="capitalize text-lg mt-3 mb-2">
+                                Obstacles I Faced
+                            </h4>
+                            <ul class="ml-3">
+                                {item.details.obstacles.map((obs) => {
+                                    return (
+                                        <li>
+                                            <h5 class="capitalize">
+                                                <span class="text-xl text-primary mr-2">
+                                                    ⚡
+                                                </span>
+                                                {obs[0]}
+                                            </h5>
+                                            <p class="ml-3 text-gray-400 first-letter:uppercase">
+                                                {obs[1]}
+                                            </p>
+                                        </li>
+                                    );
+                                })}
+                            </ul>
+
+                            <h4 class="capitalize text-lg mt-3 mb-2">Tools Used</h4>
+                            <ul class="flex flex-wrap gap-3 py-2 max-w-lg">
+                                {item.details.tools.map((tool) => {
+                                    return (
+                                        <li class="text-gray-400 border-primary border-2 rounded-xl px-3">
+                                            {tool}
+                                        </li>
+                                    );
+                                })}
+                            </ul>
                         </div>
                     </div>
                 </>
