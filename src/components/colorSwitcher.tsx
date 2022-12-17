@@ -1,8 +1,8 @@
 import React from 'react';
 
-type colorSwitcherPropsT = {title: string, tailwindStyle: string}
+type colorSwitcherPropsT = {'client:load': boolean, title: string, tailwindStyle: {title: string}}
 
-export default function ColorSwitcherTitle(props){
+export default function ColorSwitcherTitle(props:colorSwitcherPropsT){
     const indexRef = React.useRef(0);
     const lettersRefs = React.useRef([]);
 
@@ -22,12 +22,12 @@ export default function ColorSwitcherTitle(props){
     }, []);
 
     const listLetters = ()=>{
-        const letters = props.title.split('');
+        const letters: string[] = props.title.split('');
         return letters.map((letter, index)=>{
             const spanKey = letter+letters.at(index+1);
-            return <span key={spanKey} ref={(el)=>{lettersRefs.current.push(el);}} className={props.tailwindStyle}>{letter}</span>
+            return <span key={spanKey} ref={(el)=>{lettersRefs.current.push(el);}}>{letter}</span>
         });
     }
 
-    return <h1 className='text-[2.5rem] mb-[1rem]'>{listLetters()}</h1>
+    return <h1 className={props.tailwindStyle.title}>{listLetters()}</h1>
 }

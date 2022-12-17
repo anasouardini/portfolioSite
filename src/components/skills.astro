@@ -23,7 +23,7 @@ const skills = [
 ];
 ---
 
-<section class="text-slate-50 pt-[6rem] px-main">
+<section id='skills' class="text-slate-50 pt-[6rem] px-main">
     <h2
         class={`text-center capitalize text-2xl pb-[3rem] relative
               before:absolute
@@ -43,11 +43,11 @@ const skills = [
             skills.map((skill) => {
                 return (
                     <div
-                        class={`flex flex-no-wrap border-[1px] border-primary pt-[6px] pb-[4px]
+                        class={`flex flex-no-wrap items-center border-[1px] border-primary py-2
                           px-3 rounded-lg text-primary uppercase`}
                     >
                         <Icon class="text-primary h-7" name={skill[1]} />
-                        <span class="text-white ml-2">{skill[0]}</span>
+                        <span class="text-white ml-2 pt-[2px]">{skill[0]}</span>
                     </div>
                 );
             })
