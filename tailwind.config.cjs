@@ -15,6 +15,7 @@ module.exports = {
         },
         screens: {
             'nav>': { max: '550px' },
+            'astro>': { max: '280px' },
             'xs>': { max: '500px' },
             'sm>': { max: '640px' },
             'md>': { max: '768px' },
@@ -22,6 +23,7 @@ module.exports = {
             'xl>': { max: '1280px' },
 
             'nav<': { min: '550px' },
+            'astro<': { min: '280px' },
             'xs<': { min: '500px' },
             'sm<': { min: '641px' },
             'md<': { min: '768px' },
