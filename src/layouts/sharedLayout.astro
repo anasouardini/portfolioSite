@@ -12,7 +12,7 @@ const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-prim
 </script>
 
 <header
-    class="flex px-main xs>:px-4 py-4 sticky z-30 top-0 bg-gray-900/40 backdrop-blur-[7px]"
+    class="flex max-w-[1600px] px-[5%] py-4 sticky mx-auto z-30 top-0 bg-gray-900/40 backdrop-blur-[7px]"
 >
     <div class="text-primary font-bold tracking-widest uppercase">
         <svg
@@ -36,16 +36,16 @@ const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-prim
     >
         <ul class="flex gap-3">
             <li><a href="#home" class={classes.link}>Home</a></li>
-            <li><a href="#about" class={classes.link}>About</a></li>
-            <li><a href="#skills" class={classes.link}>Skills</a></li>
             <li><a href="#portfolio" class={classes.link}>Portfolio</a></li>
+            <li><a href="#skills" class={classes.link}>Skills</a></li>
+            <li><a href="#about" class={classes.link}>About</a></li>
             <li><a href="#contact" class={classes.link}>Contact</a></li>
         </ul>
     </nav>
     <button
         aria-label="show menu button"
         onclick="toggleMenu()"
-        class="fixed right-3 z-30 w-8 h-8 text-primary ml-auto nav<:hidden"
+        class="fixed right-main xs>:right-4 z-30 w-8 h-8 text-primary ml-auto nav<:hidden"
     >
         <Icon name="ri:menu-4-line" />
     </button>
@@ -60,16 +60,16 @@ const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-prim
 >
     <ul class="flex flex-col gap-3">
         <li><a href="#home" class={classes.link}>Home</a></li>
-        <li><a href="#about" class={classes.link}>About</a></li>
-        <li><a href="#skills" class={classes.link}>Skills</a></li>
         <li><a href="#portfolio" class={classes.link}>Portfolio</a></li>
+        <li><a href="#skills" class={classes.link}>Skills</a></li>
+        <li><a href="#about" class={classes.link}>About</a></li>
         <li><a href="#contact" class={classes.link}>Contact</a></li>
     </ul>
 </nav>
 
 <slot />
 
-<footer class="mt-10 py-4 px-main xs>:px-4 leading-7 text-center">
+<footer class="mt-10 py-4 px-2 leading-7 text-center">
     CopyRight © 2022 | made by <span class="text-primary capitalize">astronaut</span> using
     <Icon class="w-7 inline" name="vscode-icons:file-type-astro" />
 </footer>
