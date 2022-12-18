@@ -33,12 +33,12 @@ import Icon from 'astro-icon';
         <p class={`max-w-[25rem] leading-relaxed first-letter:uppercase`}>
             With the help of sweat technologies.
         </p>
-        <ul aria-label="socialMedia" class="mt-3">
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
-            <li><a href=""></a></li>
+        <ul aria-label="socialMedia" class="flex gap-3 mt-5 text-primary">
+            <li><a href="https:twitter.com" target="_blank"><Icon name='ph:twitter-logo-bold' class="h-10 w-8"/></a></li>
+            <li><a href="https:linkedin.com" target="_blank"><Icon name='ri:linkedin-line' class="h-10 w-8"/></a></li>
+            <li><a href="https:github.com" target="_blank"><Icon name='ri:github-line' class="h-10 w-8"/></a></li>
         </ul>
-        <div class="flex gap-7 mt-8">
+        <div class="flex flex-wrap gap-7 mt-8">
             <button class={`text-primary capitalize border-primary border-b-2 py-[5px]`}>
                 <a href="#contact">Get in Touch</a>
             </button>
@@ -59,7 +59,7 @@ import Icon from 'astro-icon';
             }
         }
     </style>
-    <div class="w-[190px] absolute astro">
+    <div class="w-[190px] absolute astro astro>:hidden">
         <Icon class="text-primary/50 w-2xl" name="fa-solid:user-astronaut" />
         <!-- <Icon class='absolute z-20 w-2xl' name='mdi:fire-circle'/> -->
         <!-- <Icon class='absolute top-[-120px] left-[-30px] w-[20rem] text-primary' name='mdi:fire'/> -->
