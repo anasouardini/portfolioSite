@@ -1,23 +1,75 @@
 ---
+import Icon from 'astro-icon';
+
 const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-primary'};
 ---
 
-<header class="flex px-[4%] py-4 sticky z-30 top-0 bg-gray-900/40 backdrop-blur-[7px]">
+<script client:load>
+    const toggleMenu = (e) => {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('hidden');
+    };
+</script>
+
+<header
+    class="flex px-main xs>:px-4 py-4 sticky z-30 top-0 bg-gray-900/40 backdrop-blur-[7px]"
+>
     <div class="text-primary font-bold tracking-widest uppercase">
-        <a href="#hero">astronaut</a>
+        <svg
+            class="inline"
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="32"
+            viewBox="5 3 14 27"
+        >
+            <path
+                fill="rgb(101 163 13)"
+                d="M18.97 19.757L15.35 5.272A2.996 2.996 0 0 0 12.437 3h-.877a2.996 2.996 0 0 0-2.91 2.272L5.03 19.757a1 1 0 0 0 1.94.486L8.28 15h7.44l1.31 5.243a1 1 0 0 0 1.94-.486ZM8.78 13l1.811-7.242a.998.998 0 0 1 .97-.758h.878a.998.998 0 0 1 .97.758L15.219 13Z"
+            ></path>
+        </svg>
+        <a href="#hero">stronaut</a>
     </div>
-    <nav class="ml-auto">
+    <nav
+        aria-label="wide screen navigation"
+        class={`ml-auto
+                nav>:hidden`}
+    >
         <ul class="flex gap-3">
+            <li><a href="#home" class={classes.link}>Home</a></li>
             <li><a href="#about" class={classes.link}>About</a></li>
             <li><a href="#skills" class={classes.link}>Skills</a></li>
             <li><a href="#portfolio" class={classes.link}>Portfolio</a></li>
             <li><a href="#contact" class={classes.link}>Contact</a></li>
         </ul>
     </nav>
+    <button
+        aria-label="show menu button"
+        onclick="toggleMenu()"
+        class="fixed right-3 z-30 w-8 h-8 text-primary ml-auto nav<:hidden"
+    >
+        <Icon name="ri:menu-4-line" />
+    </button>
 </header>
+
+<nav
+    onclick="toggleMenu()"
+    aria-label="small screen navigation"
+    id="mobileMenu"
+    class={`fixed top-0 right-0 left-0 bottom-0 z-20 bg-gray-900/90 flex justify-center items-center
+            hidden nav<:hidden`}
+>
+    <ul class="flex flex-col gap-3">
+        <li><a href="#home" class={classes.link}>Home</a></li>
+        <li><a href="#about" class={classes.link}>About</a></li>
+        <li><a href="#skills" class={classes.link}>Skills</a></li>
+        <li><a href="#portfolio" class={classes.link}>Portfolio</a></li>
+        <li><a href="#contact" class={classes.link}>Contact</a></li>
+    </ul>
+</nav>
 
 <slot />
 
-<footer class="px-[4%] pt-20 text-center">
-    CopyRight © 2022 segfaulty | All Rights Reserved
+<footer class="mt-10 py-4 px-main xs>:px-4 leading-7 text-center">
+    CopyRight © 2022 | made by <span class="text-primary capitalize">astronaut</span> using
+    <Icon class="w-7 inline" name="vscode-icons:file-type-astro" />
 </footer>

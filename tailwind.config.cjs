@@ -10,15 +10,19 @@ module.exports = {
             },
             boxShadow: { '2xl': '0 0px 20px 30px rgb(0 0 0 / .4)' },
             spacing: {
-                main: 'calc(min(10%, 100px))',
+                main: 'min(7%, 100px)',
             },
         },
         screens: {
+            'nav>': { max: '550px' },
+            'xs>': { max: '500px' },
             'sm>': { max: '640px' },
             'md>': { max: '768px' },
             'lg>': { max: '1024px' },
             'xl>': { max: '1280px' },
 
+            'nav<': { min: '550px' },
+            'xs<': { min: '500px' },
             'sm<': { min: '641px' },
             'md<': { min: '768px' },
             'lg<': { min: '1024px' },
