@@ -28,7 +28,7 @@ import Icon from 'astro-icon';
             tailwindStyle={{title: 'text-[2.5rem] mb-[1rem]'}}
         />
         <p class={`max-w-[25rem] leading-relaxed first-letter:uppercase`}>
-            I write sweat code for the web,
+            I write sweat code <Icon name='noto:honey-pot' class='w-6 inline' /> for the web,
         </p>
         <p class={`max-w-[25rem] leading-relaxed first-letter:uppercase`}>
             With the help of sweat technologies.
@@ -39,12 +39,16 @@ import Icon from 'astro-icon';
             <li><a href="https:github.com" target="_blank"><Icon name='ri:github-line' class="h-10 w-8"/></a></li>
         </ul>
         <div class="flex flex-wrap gap-7 mt-8">
-            <button class={`text-primary capitalize border-primary border-b-2 py-[5px]`}>
-                <a href="#contact">Get in Touch</a>
+            <button class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl`}>
+                <a href="#contact">
+                   <Icon name='mdi:hand-wave-outline' class='inline text-primary mr-2 w-7' /> 
+                    Get in Touch</a>
             </button>
-            <button class={`text-primary capitalize border-primary border-b-2 py-[5px]`}>
+            <button class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl`}>
                 <a href="/media/projects/snipshare.jpeg" download="astronaut_resume.pdf"
-                    >Download resume</a
+                    >
+                   <Icon name='ic:round-sim-card-download' class='inline text-primary mr-1 w-7' /> 
+                    Download resume</a
                 >
             </button>
         </div>

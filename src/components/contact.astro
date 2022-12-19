@@ -36,11 +36,14 @@ const classes = {
             class={classes.input}
             placeholder="Message"></textarea>
 
-        <input
+        <button
             id="submit"
             type="submit"
             class="cursor-pointer text-lg border-l-2 border-l-primary pl-2 mt-3"
-        />
+        >
+            <Icon name="ion:paper-airplane" class="mr-2 w-6 inline text-primary" />
+            Sumbit
+        </button>
     </form>
     <script client:load>
         const form = document.getElementById('form');
