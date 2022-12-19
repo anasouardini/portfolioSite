@@ -10,8 +10,8 @@ const classes = {tableBorder: 'border-2 border-primary border-collapse', colPadd
     >
         My <span class="text-primary">Story</span>
     </h2>
-    <div class="flex gap-6 flex-wrap justify-center">
-        <div aria-label="story text" class="mt-[3rem] grow min-w-[300px] max-w-xl basis-0 flex flex-col justify-center">
+    <div class="flex xs>:flex-col gap-6 flex-wrap justify-center">
+        <div aria-label="story text" class="mt-[3rem] grow min-w-[300px] xs>:min-w-[200px] max-w-xl basis-0 flex flex-col justify-center">
             <p class="mb-3">
                 As I always was fascinated by technology, Web engineers picked my mind
                 with the new fancy and carefully crafted solutions to certain problem.
@@ -21,7 +21,7 @@ const classes = {tableBorder: 'border-2 border-primary border-collapse', colPadd
                 other curious and ambitious people like me.
             </p>
         </div>
-        <table class={`${classes.tableBorder} mt-[3rem] grow-0 min-w-max basis-0`}>
+        <table class={`${classes.tableBorder} mt-[3rem] grow-0 min-w-max xs>:min-w-min basis-0`}>
             <tr  class={`${classes.tableBorder}`}>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}>2011</td>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}>Missing with electronics.</td>

@@ -70,7 +70,7 @@ const projectItems: projectItemsT = [
                             class="grow basis-0 flex flex-col items-center mt-[3rem]"
                         >
                             <Picture
-                                class="min-w-[280px]"
+                                class="min-w-[280px] sxs>:min-w-0"
                                 widths={[400, 600, 800]}
                                 aspectRatio={item.card.aspectRatio}
                                 formats={['webp']}
@@ -81,7 +81,7 @@ const projectItems: projectItemsT = [
                             {/*check project buttons*/}
                             <div
                                 aria-label="project buttons"
-                                class="w-full flex justify-around gap-4 mt-5"
+                                class="w-full flex-wrap flex justify-around gap-4 mt-5"
                             >
                                 {[
                                     ['preview', 'ic:round-remove-red-eye'],
