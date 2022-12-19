@@ -1,7 +1,7 @@
 ---
 import Icon from 'astro-icon';
 
-const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-primary'};
+const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-primary capitalize'};
 ---
 
 <script client:load>
@@ -35,7 +35,7 @@ const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-prim
                 nav>:hidden`}
     >
         <ul class="flex gap-3">
-            <li><a href="#home" class={classes.link}>Home</a></li>
+            <li><a href="#intro" class={classes.link}>intro</a></li>
             <li><a href="#portfolio" class={classes.link}>Portfolio</a></li>
             <li><a href="#skills" class={classes.link}>Skills</a></li>
             <li><a href="#about" class={classes.link}>About</a></li>
@@ -59,7 +59,7 @@ const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-prim
             hidden nav<:hidden`}
 >
     <ul class="flex flex-col gap-3">
-        <li><a href="#home" class={classes.link}>Home</a></li>
+        <li><a href="#intro" class={classes.link}>intro</a></li>
         <li><a href="#portfolio" class={classes.link}>Portfolio</a></li>
         <li><a href="#skills" class={classes.link}>Skills</a></li>
         <li><a href="#about" class={classes.link}>About</a></li>

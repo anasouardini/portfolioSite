@@ -1,5 +1,5 @@
 ---
-import Icon from 'astro-icon'
+import Icon from 'astro-icon';
 const classes = {
     input: `border-l-2 border-l-primary px-2 py-1 bg-gray-400/10 block w-full mb-4`,
 };
@@ -14,7 +14,7 @@ const classes = {
     >
         Get <span class="text-primary">In Touch</span>
     </h2>
-    <form class="mx-auto max-w-[400px]">
+    <form class="mx-auto max-w-[400px]" id="form">
         <input
             aria-label="your name"
             type="text"
@@ -35,7 +35,19 @@ const classes = {
             rows="4"
             class={classes.input}
             placeholder="Message"></textarea>
+
+        <input
+            id="submit"
+            type="submit"
+            class="cursor-pointer text-lg border-l-2 border-l-primary pl-2 mt-3"
+        />
     </form>
+    <script client:load>
+        const form = document.getElementById('form');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
+    </script>
 
     <h3 class="capitalize mx-auto w-max mt-10 text-xl">other methods</h3>
     <ul aria-label="socialMedia" class="flex gap-3 mt-5 text-primary mx-auto w-max">

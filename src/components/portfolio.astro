@@ -1,9 +1,10 @@
 ---
+import Icon from 'astro-icon';
 import {Image, Picture} from '@astrojs/image/components';
 // type sharedT = {hostingAddress: string, sourceCodeAddress: string, mediaAddress: string}
 const shared = {
-    hostingAddress: 'https://segfaulty.netlify.',
-    sourceCodeAddress: 'https://wwww.github.com/segfaulty',
+    hostingAddress: 'https://segfaulty.netlify/kdjfds/',
+    sourceCodeAddress: 'https://wwww.github.com/segfaulty1',
     mediaAddress: '/media/projects',
 };
 
@@ -42,7 +43,11 @@ const projectItems: projectItemsT = [
 ];
 ---
 
-<section id="portfolio" aria-label="projects" class="text-slate-50 pt-[6rem] px-main xs>:px-4">
+<section
+    id="portfolio"
+    aria-label="projects"
+    class="text-slate-50 pt-[6rem] px-main xs>:px-4"
+>
     <h2
         class={`text-center capitalize text-2xl relative
               before:absolute
@@ -73,29 +78,31 @@ const projectItems: projectItemsT = [
                                 alt="project image"
                             />
 
-                            {/*
-                            <Image
-                                alt={`project image - ${item.details.title}`}
-                                width={400}
-                                aspectRatio="1.5"
-                                loading="lazy"
-                                src={`${item.card.mediaLink}`}
-                            />
-                                <img src={`${item.card.mediaLink}`} alt="" class="border-2 border-primary w-[400px]"> 
-                            */}
-
+                            {/*check project buttons*/}
                             <div
                                 aria-label="project buttons"
-                                class="flex gap-4 mt-5 w-min"
+                                class="w-full flex justify-around gap-4 mt-5"
                             >
-                                <button class="w-max border-b-2 border-b-primary text-primary">
-                                    Preview
-                                </button>
-                                <button class="w-max border-b-2 border-b-primary text-primary">
-                                    Source Code
-                                </button>
+                                {[
+                                    ['preview', 'ic:round-remove-red-eye'],
+                                    ['code', 'fe:github-alt'],
+                                ].map((button) => {
+                                    return (
+                                        <a
+                                            href={item.card.previewLink}
+                                            class="w-max text-primary border-2 border-primary px-3 py-1 rounded-xl"
+                                        >
+                                            <Icon
+                                                name={button[1]}
+                                                class="w-8 mr-1 inline"
+                                            />
+                                            {button[0]}
+                                        </a>
+                                    );
+                                })}
                             </div>
                         </div>
+
                         <div
                             aria-label="project details"
                             class="grow basis-0 min-w-[250px] mt-[3rem]"
@@ -129,7 +136,7 @@ const projectItems: projectItemsT = [
                             <ul class="flex flex-wrap gap-3 py-2 max-w-lg">
                                 {item.details.tools.map((tool) => {
                                     return (
-                                        <li class="text-gray-400 border-primary border-2 rounded-xl px-3">
+                                        <li class="text-gray-400 border-primary border-[1px] rounded-xl px-3">
                                             {tool}
                                         </li>
                                     );
