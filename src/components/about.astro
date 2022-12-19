@@ -1,29 +1,47 @@
-<section id='about' class="text-slate-50 pt-[6rem] px-main xs>:px-4">
-    <div>
-        <h2
-            class={`text-center capitalize text-2xl pb-[3rem] relative
+---
+const classes = {tableBorder: 'border-2 border-primary border-collapse', colPadding: 'px-3 py-2'}
+---
+<section id="about" class="text-slate-50 pt-[6rem] px-main xs>:px-4">
+    <h2
+        class={`text-center capitalize text-2xl relative
                     before:absolute
                     before:border-b-2 before:border-b-primary
                     before:w-[2.3rem] before:h-[38px]`}
-        >
-            My <span class="text-primary">Story</span>
-        </h2>
-        <div aria-label='story text'></div>
-        <p class="max-w-xl mb-3">
-            As I always was fascinated by technology, Web engineers picked my mind with
-            the new fancy and carefully crafted solutions to certain problem.
-        </p>
-        <p class="max-w-xl">
-            And here I am going their path looking for a chance to do the same with other
-            curious and ambitious people like me.
-        </p>
-
-        <!-- I need a table here -->
-
-        <!-- <div class="mt-[2rem] flex gap-[2rem]">
-            <button class="text-primary border-primary border-[1px] py-[5px] px-[6px] ">Get in Touch</button>
-            <button class="text-primary border-primary border-[1px] py-[5px] px-[6px] ">Download resume</button>
-        </div> -->
+    >
+        My <span class="text-primary">Story</span>
+    </h2>
+    <div class="flex gap-6 flex-wrap justify-center">
+        <div aria-label="story text" class="mt-[3rem] grow min-w-[300px] max-w-xl basis-0 flex flex-col justify-center">
+            <p class="mb-3">
+                As I always was fascinated by technology, Web engineers picked my mind
+                with the new fancy and carefully crafted solutions to certain problem.
+            </p>
+            <p class="">
+                And here I am going their path looking for a chance to do the same with
+                other curious and ambitious people like me.
+            </p>
+        </div>
+        <table class={`${classes.tableBorder} mt-[3rem] grow-0 min-w-max basis-0`}>
+            <tr  class={`${classes.tableBorder}`}>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>2011</td>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>Missing with electronics.</td>
+            </tr>
+            <tr  class={`${classes.tableBorder}`}>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>2015</td>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>I was hooked with security.</td>
+            </tr>
+            <tr  class={`${classes.tableBorder}`}>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>2017</td>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>Introduced myself to web.</td>
+            </tr>
+            <tr  class={`${classes.tableBorder}`}>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>2021</td>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>Making windows malware.</td>
+            </tr>
+            <tr  class={`${classes.tableBorder}`}>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>2022</td>
+                <td class={`${classes.tableBorder} ${classes.colPadding}`}>I toke web seriously</td>
+            </tr>
+        </table>
     </div>
-    <div></div>
 </section>
