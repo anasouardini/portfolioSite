@@ -4,6 +4,7 @@ import Icon from 'astro-icon';
 const classes = {
     tableBorder: 'border-2 border-primary border-collapse',
     colPadding: 'px-3 py-2',
+    selectiveHighlight: 'odd:bg-gray-800/80'
 };
 ---
 
@@ -38,31 +39,31 @@ const classes = {
         <table
             class={`${classes.tableBorder} mt-[3rem] grow-0 min-w-max xs>:min-w-min basis-0`}
         >
-            <tr class={`${classes.tableBorder}`}>
+            <tr class={`${classes.tableBorder} ${classes.selectiveHighlight}`}>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}>2011</td>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}
                     >Missing with electronics.</td
                 >
             </tr>
-            <tr class={`${classes.tableBorder}`}>
+            <tr class={`${classes.tableBorder} ${classes.selectiveHighlight}`}>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}>2015</td>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}
                     >I was hooked with security.</td
                 >
             </tr>
-            <tr class={`${classes.tableBorder}`}>
+            <tr class={`${classes.tableBorder} ${classes.selectiveHighlight}`}>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}>2017</td>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}
                     >Introduced myself to web.</td
                 >
             </tr>
-            <tr class={`${classes.tableBorder}`}>
+            <tr class={`${classes.tableBorder} ${classes.selectiveHighlight}`}>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}>2021</td>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}
                     >Making windows malware.</td
                 >
             </tr>
-            <tr class={`${classes.tableBorder}`}>
+            <tr class={`${classes.tableBorder} ${classes.selectiveHighlight}`}>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}>2022</td>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}
                     >I toke web seriously</td
