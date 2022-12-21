@@ -84,12 +84,13 @@ const projectItems: projectItemsT = [
                                 class="w-full flex-wrap flex justify-around gap-4 mt-5"
                             >
                                 {[
-                                    ['preview', 'ic:round-remove-red-eye'],
-                                    ['code', 'fe:github-alt'],
+                                    // ['preview', 'ic:round-remove-red-eye', item.card.previewLink],
+                                    ['preview', 'ic:twotone-remove-red-eye', item.card.previewLink],
+                                    ['code', 'ph:code', item.card.sourceCodeLink],
                                 ].map((button) => {
                                     return (
                                         <a
-                                            href={item.card.previewLink}
+                                            href={button[2]}
                                             class="w-max text-primary border-[1px] border-primary px-3 py-1 rounded-xl"
                                         >
                                             <Icon
