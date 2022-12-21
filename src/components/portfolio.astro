@@ -91,11 +91,12 @@ const projectItems: projectItemsT = [
                                     return (
                                         <a
                                             href={button[2]}
-                                            class="w-max text-primary border-[1px] border-primary px-3 py-1 rounded-xl"
+                                            class="w-max text-primary border-[1px] border-primary px-3 py-1 rounded-xl
+                                            subtleHoverSlider group"
                                         >
                                             <Icon
                                                 name={button[1]}
-                                                class="w-8 mr-1 inline"
+                                                class="w-8 mr-1 inline group-hover:scale-[1.2] duration-300"
                                             />
                                             {button[0]}
                                         </a>
@@ -137,7 +138,7 @@ const projectItems: projectItemsT = [
                             <ul class="flex flex-wrap gap-3 py-2 max-w-lg">
                                 {item.details.tools.map((tool) => {
                                     return (
-                                        <li class="text-gray-400 border-primary border-[1px] rounded-xl px-3">
+                                        <li class="text-gray-400 border-primary border-[1px] rounded-xl px-3 hover:rotate-[2deg] hover:scale-[1.1] duration-300">
                                             {tool}
                                         </li>
                                     );

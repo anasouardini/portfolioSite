@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-section{
-  @apply max-w-[1200px] mx-auto
+section {
+    @apply max-w-[1200px] mx-auto
 }
 
 body::scrollbar,
@@ -22,4 +22,21 @@ body::-webkit-scrollbar-thumb,
     border-left: 2px solid black;
     border-radius: 5px;
     background-color: rgb(00 130 0);
+}
+
+/* call to action buttons */
+.subtleHoverSlider{
+    @apply relative overflow-hidden
+}
+
+.subtleHoverSlider:hover:after {
+    transition-duration: .3s;
+    right: 0;
+}
+
+.subtleHoverSlider:after {
+    content: '';
+    @apply absolute z-[-1] bg-gray-800/80 top-0 right-full bottom-0 left-0;
+    left: 0;
+    transition-duration: .3s;
 }

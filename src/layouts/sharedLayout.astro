@@ -1,8 +1,25 @@
 ---
 import Icon from 'astro-icon';
 
-const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-primary capitalize text-lg'};
+const classes = {
+    link: `navlink pb-2 capitalize text-lg relative
+           after:block after:absolute after:bottom-0 after:left-0
+           after:h-[2px] after:w-full after:bg-primary`,
+};
 ---
+<style>
+    .navlink:after{
+        transform-origin: left;
+        transition-duration: .3s;
+
+        /*tailwind cannot do this*/
+        transform: scaleX(0);
+    }
+    .navlink:hover:after{
+        transition-duration: .3s;
+        transform: scaleX(1);
+    }
+</style>
 
 <script client:load>
     const toggleMenu = (e) => {
@@ -12,9 +29,9 @@ const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-prim
 </script>
 
 <header
-    class="flex max-w-[1600px] px-[5%] py-4 sticky mx-auto z-30 top-0 bg-gray-900/40 backdrop-blur-[7px]"
+    class="flex max-w-[1600px] px-[5%] py-2 sticky mx-auto z-30 top-0 bg-gray-900/40 backdrop-blur-[7px]"
 >
-    <div class="text-primary font-bold tracking-widest uppercase">
+    <div class="pt-1 hover:rotate-[2deg] hover:scale-[1.1] duration-300 text-primary group font-bold tracking-widest uppercase">
         <svg
             class="inline"
             xmlns="http://www.w3.org/2000/svg"
@@ -31,7 +48,7 @@ const classes = {link: 'border-b-transparent pb-2 border-b-2 hover:border-b-prim
     </div>
     <nav
         aria-label="wide screen navigation"
-        class={`ml-auto
+        class={`pt-1 ml-auto
                 nav>:hidden`}
     >
         <ul class="flex gap-3">

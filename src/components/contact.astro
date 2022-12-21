@@ -5,6 +5,13 @@ const classes = {
 };
 ---
 
+<script>
+    const form = document.getElementById('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+    });
+</script>
+
 <section id="contact" class="text-slate-50 pt-[6rem] px-main xs>:px-4">
     <h2
         class={`text-center capitalize text-2xl pb-[3rem] relative
@@ -39,34 +46,28 @@ const classes = {
         <button
             id="submit"
             type="submit"
-            class="cursor-pointer text-lg border-l-2 border-l-primary pl-2 mt-3"
+            class="cursor-pointer text-lg border-l-2 border-l-primary px-2 py-1 mt-3 subtleHoverSlider group"
         >
-            <Icon name="ion:paper-airplane" class="mr-2 w-6 inline text-primary" />
+            <Icon name="ion:paper-airplane" class="mr-2 w-6 inline text-primary group-hover:rotate-[35deg] duration-300" />
             Sumbit
         </button>
     </form>
-    <script client:load>
-        const form = document.getElementById('form');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-        });
-    </script>
 
     <h3 class="capitalize mx-auto w-max mt-10 text-xl">other methods</h3>
     <ul aria-label="socialMedia" class="flex gap-3 mt-5 text-primary mx-auto w-max">
         <li>
             <a href="https:twitter.com" target="_blank"
-                ><Icon name="ph:twitter-logo-bold" class="h-10 w-8" />
+                ><Icon name="ph:twitter-logo-bold" class="h-10 w-8 hover:scale-[1.2] duration-300" />
             </a>
         </li>
         <li>
             <a href="https:linkedin.com" target="_blank"
-                ><Icon name="ri:linkedin-line" class="h-10 w-8" />
+                ><Icon name="ri:linkedin-line" class="h-10 w-8 hover:scale-[1.2] duration-300" />
             </a>
         </li>
         <li>
             <a href="https:github.com" target="_blank"
-                ><Icon name="ri:github-line" class="h-10 w-8" />
+                ><Icon name="ri:github-line" class="h-10 w-8 hover:scale-[1.2] duration-300" />
             </a>
         </li>
     </ul>

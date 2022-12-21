@@ -47,9 +47,9 @@ const skills = [
                 return (
                     <div
                         class={`flex flex-no-wrap items-center border-[1px] border-primary py-2
-                          px-3 rounded-lg text-primary uppercase`}
+                          px-3 rounded-lg text-primary uppercase subtleHoverSlider group`}
                     >
-                        <Icon class="text-primary h-7" name={skill[1]} />
+                        <Icon class="text-primary h-7 group-hover:scale-[1.2] duration-300" name={skill[1]} />
                         <span class="text-white ml-2 pt-[2px]">{skill[0]}</span>
                     </div>
                 );
