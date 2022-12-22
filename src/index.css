@@ -6,6 +6,24 @@ section {
     @apply max-w-[1200px] mx-auto
 }
 
+@font-face{
+    font-family: "Roboto";
+    src: url("assets/fonts/roboto/Roboto-Regular.ttf")
+}
+@font-face{
+    font-family: "MartianMono";
+    src: url("assets/fonts/martianmono/MartianMono.ttf")
+}
+
+html{
+    font-size: min(calc(1rem + 6 * (20vw / 680)), 1.35rem);
+    font-family: "Roboto", sans-serif;
+}
+
+h1, h2{
+    font-family: "MartianMono", sans-serif;
+}
+
 /* scroll bar */
 body::scrollbar,
 .scrollbar::scrollbar {
