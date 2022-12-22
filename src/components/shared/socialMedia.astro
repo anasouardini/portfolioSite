@@ -1,0 +1,31 @@
+---
+import Icon from 'astro-icon';
+const classes = {ul: Astro.props.style};
+---
+
+<ul aria-label="socialMedia" class={`flex gap-3 mt-5 text-primary ${classes.ul}`}>
+    <li>
+        <a href="https:twitter.com" target="_blank"
+            ><Icon
+                name="ph:twitter-logo-bold"
+                class="h-10 w-8 hover:scale-[1.2] duration-300"
+            />
+        </a>
+    </li>
+    <li>
+        <a href="https:linkedin.com" target="_blank"
+            ><Icon
+                name="ri:linkedin-line"
+                class="h-10 w-8 hover:scale-[1.2] duration-300"
+            />
+        </a>
+    </li>
+    <li>
+        <a href="https:github.com" target="_blank"
+            ><Icon
+                name="ri:github-line"
+                class="h-10 w-8 hover:scale-[1.2] duration-300"
+            />
+        </a>
+    </li>
+</ul>

@@ -1,5 +1,6 @@
 ---
 import Icon from 'astro-icon';
+import SocialMedia from './shared/socialMedia.astro';
 ---
 
 <section id="intro" class="relative px-main xs>:px-4 pt-[4rem] flex justify-between">
@@ -53,23 +54,7 @@ import Icon from 'astro-icon';
         <p class={`max-w-[25rem] leading-relaxed first-letter:uppercase`}>
             With the help of sweat technologies.
         </p>
-        <ul aria-label="Social hedia Links" class="flex gap-3 mt-5 text-primary">
-            <li>
-                <a href="https:twitter.com" target="_blank"
-                    ><Icon name="ph:twitter-logo-bold" class="h-10 w-8 hover:scale-[1.2] duration-300" />
-                </a>
-            </li>
-            <li>
-                <a href="https:linkedin.com" target="_blank"
-                    ><Icon name="ri:linkedin-line" class="h-10 w-8 hover:scale-[1.2] duration-300" />
-                </a>
-            </li>
-            <li>
-                <a href="https:github.com" target="_blank"
-                    ><Icon name="ri:github-line" class="h-10 w-8 hover:scale-[1.2] duration-300" />
-                </a>
-            </li>
-        </ul>
+        <SocialMedia />
         <div class="flex flex-wrap gap-7 mt-8">
             <button
                 class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
@@ -77,9 +62,13 @@ import Icon from 'astro-icon';
             >
                 <a href="#contact">
                     <Icon
+                        name="ion:paper-airplane"
+                        class="mr-2 w-6 inline text-primary group-hover:rotate-[35deg] duration-300"
+                    />
+                    <!-- <Icon
                         name="mdi:hand-wave-outline"
                         class="inline text-primary mr-2 w-7 group-hover:scale-[1.2] duration-300"
-                    />
+                    /> -->
                     Get in Touch</a
                 >
             </button>
@@ -89,7 +78,7 @@ import Icon from 'astro-icon';
             >
                 <a href="/media/projects/snipshare.jpeg" download="astronaut_resume.pdf">
                     <Icon
-                        name="ic:round-sim-card-download"
+                        name="ic:outline-file-download"
                         class="inline text-primary mr-1 w-7 group-hover:scale-[1.2] duration-300"
                     />
                     Download resume
