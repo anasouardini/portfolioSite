@@ -1,0 +1,31 @@
+---
+import Icon from 'astro-icon';
+---
+
+<html style="scroll-behavior: smooth;" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astronaut</title>
+    </head>
+    <body
+        class="text-white bg-gray-900 overflow-x-hidden min-h-[100vh] flex justify-center items-center"
+    >
+        <section aria-label="page not found" class="px-10">
+            <Icon
+                name="fluent:location-not-found-24-regular"
+                class="text-primary w-[17rem] mx-auto mb-10"
+            />
+            <h1 class="capitalize text-center text-2xl leading-10 max-w-[30rem]">
+                Not sure what you're looking for.
+                <br />
+                but you can go back
+                <a href="/" class="underline text-primary">
+                    <Icon name="ic:twotone-home" class="inline w-10" />
+                </a>
+            </h1>
+        </section>
+    </body>
+</html>
