@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 const defaultTheme = require('tailwindcss/defaultTheme');
 module.exports = {
     content: ['index.astro', './src/**/*.{js,ts,jsx,tsx,html,astro}'],
@@ -12,6 +13,37 @@ module.exports = {
             spacing: {
                 main: 'min(7%, 100px)',
             },
+            animation: {
+                'loadFromRight': 'loadFromRight .6s ease-in-out forwards',
+                'loadFromLeft': 'loadFromLeft .3s ease-in-out forwards',
+                'loadFromDown': 'loadFromDown .8s ease-in-out forwards',
+                'loadFromUp': 'loadFromUp .8s ease-in-out forwards',
+
+                'scaleFromCenter': 'scaleFromCenter .8s ease-in-out forwards',
+            },
+            keyframes: {
+                'loadFromUp': {
+                    '0%, 50%': { transform: 'translateY(-1000px)' },
+                    '100%': { transform: 'translateY(0)' },
+                },
+                'loadFromDown': {
+                    '0%, 50%': { transform: 'translateY(1000px)' },
+                    '100%': { transform: 'translateY(0)' },
+                },
+                'loadFromRight': {
+                    '0%, 20%': { transform: 'translateX(500px)' },
+                    '100%': { transform: 'translateX(0)' },
+                },
+                'loadFromLeft': {
+                    '0%': { transform: 'translateX(-500px)' },
+                    '100%': { transform: 'translateX(0)' },
+                },
+
+                'scaleFromCenter': {
+                    '0%': { transform: 'scaleX(0)' },
+                    '100%': { transform: 'scaleX(1)' },
+                },
+            }
         },
         screens: {
             'nav>': { max: '550px' },

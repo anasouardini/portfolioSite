@@ -46,7 +46,7 @@ const projectItems: projectItemsT = [
 <section
     id="portfolio"
     aria-label="projects"
-    class="text-slate-50 pt-[6rem] px-main xs>:px-4"
+    class="text-slate-50 pt-[6rem] px-main xs>:px-4 overflow-y-hidden"
 >
     <h2
         class={`text-center capitalize text-2xl relative
@@ -67,7 +67,7 @@ const projectItems: projectItemsT = [
                     >
                         <div
                             aria-label="project preview"
-                            class="grow basis-0 flex flex-col items-center mt-[3rem]"
+                            class="grow basis-0 flex flex-col items-center mt-[3rem] animate-loadFromUp"
                         >
                             <Picture
                                 class="min-w-[280px] sxs>:min-w-0"
@@ -107,7 +107,7 @@ const projectItems: projectItemsT = [
 
                         <div
                             aria-label="project details"
-                            class="grow basis-0 min-w-[250px] mt-[3rem]"
+                            class="grow basis-0 min-w-[250px] mt-[3rem] animate-loadFromDown"
                         >
                             <h3 class="capitalize mb-2 text-xl">{item.details.title}</h3>
                             <p class="first-letter:uppercase text-gray-400 max-w-md">
