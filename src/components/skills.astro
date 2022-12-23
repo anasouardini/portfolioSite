@@ -26,7 +26,7 @@ const skills = [
 ];
 ---
 
-<section id='skills' class="text-slate-50 pt-[6rem] px-main xs>:px-4">
+<section aria-label="skills" id='skills' class="text-slate-50 pt-[6rem] px-main xs>:px-4">
     <h2
         class={`text-center capitalize text-2xl pb-[3rem] relative
               before:absolute
@@ -41,19 +41,19 @@ const skills = [
             grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         }
     </style>
-    <div class="skillsGrid grid gap-5 max-w-lg mx-auto">
+    <ul class="skillsGrid grid gap-5 max-w-lg mx-auto">
         {
             skills.map((skill) => {
                 return (
-                    <div
+                    <li
                         class={`flex flex-no-wrap items-center border-[1px] border-primary py-2
                           px-3 rounded-lg text-primary uppercase subtleHoverSlider group`}
                     >
                         <Icon class="text-primary h-7 group-hover:scale-[1.2] duration-300" name={skill[1]} />
                         <span class="text-white ml-2 pt-[2px]">{skill[0]}</span>
-                    </div>
+                    </li>
                 );
             })
         }
-    </div>
+    </ul>
 </section>

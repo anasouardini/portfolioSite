@@ -3,7 +3,11 @@ import Icon from 'astro-icon';
 import SocialMedia from './shared/socialMedia.astro';
 ---
 
-<section id="intro" class="relative px-main xs>:px-4 pt-[4rem] flex justify-between items-center">
+<section
+    aria-label="intro"
+    id="intro"
+    class="relative px-main xs>:px-4 pt-[4rem] flex justify-between items-center"
+>
     <!-- tailwind can not do this -->
     <style>
         .gradient-70 {
@@ -18,7 +22,10 @@ import SocialMedia from './shared/socialMedia.astro';
         }
     </style>
     <div class="z-10 gradient-70 animate-loadFromLeft">
-        <p class="text-primary capitalize uppercase text-xl tracking-wider mb-1">
+        <p
+            aria-label="my name"
+            class="text-primary capitalize uppercase text-xl tracking-wider mb-1"
+        >
             I'm astronaut
         </p>
         <!-- hero title -->
@@ -55,35 +62,34 @@ import SocialMedia from './shared/socialMedia.astro';
             With the help of sweat technologies.
         </p>
         <SocialMedia />
-        <div class="flex flex-wrap gap-7 mt-8">
-            <button
+        <div aria-label="social media links" class="flex flex-wrap gap-7 mt-8">
+            <a
                 class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                         subtleHoverSlider group`}
+                href="#contact"
             >
-                <a href="#contact">
-                    <Icon
-                        name="ion:paper-airplane"
-                        class="mr-2 w-6 inline text-primary group-hover:rotate-[35deg] duration-300"
-                    />
-                    <!-- <Icon
+                <Icon
+                    name="ion:paper-airplane"
+                    class="mr-2 w-6 inline text-primary group-hover:rotate-[35deg] duration-300"
+                />
+                <!-- <Icon
                         name="mdi:hand-wave-outline"
                         class="inline text-primary mr-2 w-7 group-hover:scale-[1.2] duration-300"
                     /> -->
-                    Get in Touch</a
-                >
-            </button>
-            <button
+                Get in Touch</a
+            >
+            <a
                 class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                         subtleHoverSlider group`}
+                href="/media/projects/snipshare.jpeg"
+                download="astronaut_resume.pdf"
             >
-                <a href="/media/projects/snipshare.jpeg" download="astronaut_resume.pdf">
-                    <Icon
-                        name="ic:outline-file-download"
-                        class="inline text-primary mr-1 w-7 group-hover:scale-[1.2] duration-300"
-                    />
-                    Download resume
-                </a>
-            </button>
+                <Icon
+                    name="ic:outline-file-download"
+                    class="inline text-primary mr-1 w-7 group-hover:scale-[1.2] duration-300"
+                />
+                Download resume
+            </a>
         </div>
     </div>
     <style>
@@ -96,7 +102,10 @@ import SocialMedia from './shared/socialMedia.astro';
             }
         }
     </style>
-    <div class="w-[190px] absolute flex astro astro>:hidden animate-loadFromRight">
+    <div
+        aria-label="astronaut icon"
+        class="w-[190px] absolute flex astro astro>:hidden animate-loadFromRight"
+    >
         <Icon class="text-primary/50 w-2xl" name="fa-solid:user-astronaut" />
         <!-- <Icon class='absolute z-20 w-2xl' name='mdi:fire-circle'/> -->
         <!-- <Icon class='absolute top-[-120px] left-[-30px] w-[20rem] text-primary' name='mdi:fire'/> -->

@@ -7,31 +7,53 @@ const classes = {
            after:h-[2px] after:w-full after:bg-primary`,
 };
 ---
+<script>
+    const button = document.getElementById('showMenu');
+    button.addEventListener('click', (e) => {
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenu.classList.toggle('hidden');
+
+        // toggle aria-expanded
+        const ariaExpandedAttr = e.currentTarget.getAttribute('aria-expanded');
+        if (ariaExpandedAttr == 'false') {
+            e.currentTarget.setAttribute('aria-expanded', 'true');
+        } else {
+            e.currentTarget.setAttribute('aria-expanded', 'false');
+        }
+    });
+    const mobileMenu = document.getElementById('mobileMenu');
+    mobileMenu.addEventListener('click', (e) => {
+        const target = e.currentTarget;
+        target.classList.toggle('hidden');
+        // toggle aria-expanded
+        const button = document.getElementById('showMenu');
+        const ariaExpandedAttr = button.getAttribute('aria-expanded');
+        console.log(ariaExpandedAttr);
+        button.setAttribute('aria-expanded', !ariaExpandedAttr);
+    });
+</script>
+
 <style>
-    .navlink:after{
+    .navlink:after {
         transform-origin: left;
-        transition-duration: .3s;
+        transition-duration: 0.3s;
 
         /*tailwind cannot do this*/
         transform: scaleX(0);
     }
-    .navlink:hover:after{
-        transition-duration: .3s;
+    .navlink:hover:after {
+        transition-duration: 0.3s;
         transform: scaleX(1);
     }
 </style>
 
-<script client:load>
-    const toggleMenu = (e) => {
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenu.classList.toggle('hidden');
-    };
-</script>
-
 <header
     class="flex max-w-[1600px] px-[5%] py-2 sticky mx-auto z-30 top-0 bg-gray-900/40 backdrop-blur-[7px]"
 >
-    <div class="pt-1 hover:rotate-[2deg] hover:scale-[1.1] duration-300 text-primary group font-bold tracking-widest uppercase">
+    <div
+        aria-label="logo"
+        class="pt-1 hover:rotate-[2deg] hover:scale-[1.1] duration-300 text-primary group font-bold tracking-widest uppercase"
+    >
         <svg
             class="inline"
             xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +83,8 @@ const classes = {
     </nav>
     <button
         aria-label="show menu button"
-        onclick="toggleMenu()"
+        aria-expanded="false"
+        id="showMenu"
         class="fixed right-main xs>:right-2 z-30 w-8 h-8 text-primary ml-auto nav<:hidden"
     >
         <Icon name="ri:menu-4-line" />
@@ -69,7 +92,6 @@ const classes = {
 </header>
 
 <nav
-    onclick="toggleMenu()"
     aria-label="small screen navigation"
     id="mobileMenu"
     class={`fixed top-0 right-0 left-0 bottom-0 z-20 bg-gray-900/90 flex justify-center items-center
@@ -83,6 +105,7 @@ const classes = {
         <li><a href="#contact" class={classes.link}>Contact</a></li>
     </ul>
 </nav>
+
 
 <slot />
 

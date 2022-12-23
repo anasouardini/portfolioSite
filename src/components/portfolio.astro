@@ -44,8 +44,8 @@ const projectItems: projectItemsT = [
 ---
 
 <section
-    id="portfolio"
     aria-label="projects"
+    id="portfolio"
     class="text-slate-50 pt-[6rem] px-main xs>:px-4 overflow-y-hidden"
 >
     <h2
@@ -85,7 +85,11 @@ const projectItems: projectItemsT = [
                             >
                                 {[
                                     // ['preview', 'ic:round-remove-red-eye', item.card.previewLink],
-                                    ['preview', 'ic:twotone-remove-red-eye', item.card.previewLink],
+                                    [
+                                        'preview',
+                                        'ic:twotone-remove-red-eye',
+                                        item.card.previewLink,
+                                    ],
                                     ['code', 'ph:code', item.card.sourceCodeLink],
                                 ].map((button) => {
                                     return (
