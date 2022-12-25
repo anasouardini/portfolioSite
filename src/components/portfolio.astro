@@ -1,6 +1,5 @@
 ---
 import Icon from 'astro-icon';
-import {Image, Picture} from '@astrojs/image/components';
 // type sharedT = {hostingAddress: string, sourceCodeAddress: string, mediaAddress: string}
 const shared = {
     hostingAddress: 'https://segfaulty.netlify/kdjfds/',
@@ -69,11 +68,8 @@ const projectItems: projectItemsT = [
                             aria-label="project preview"
                             class="grow basis-0 flex flex-col items-center mt-[3rem] animate-loadFromUp"
                         >
-                            <Picture
+                            <img
                                 class="min-w-[280px] sxs>:min-w-0"
-                                widths={[400, 600, 800]}
-                                aspectRatio={item.card.aspectRatio}
-                                formats={['webp']}
                                 src={`${item.card.mediaLink}`}
                                 alt="project image"
                             />
