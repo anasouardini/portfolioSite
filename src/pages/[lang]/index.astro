@@ -8,23 +8,54 @@ import Skills from '../../components/skills.astro';
 import Portfolio from '../../components/portfolio.astro';
 import Contact from '../../components/contact.astro';
 
-export function getStaticPaths () {
- return [
-    {params: {lang: 'en'}},
-    {params: {lang: 'fr'}},
-  ];
+export function getStaticPaths() {
+    return [{params: {lang: 'en'}}, {params: {lang: 'fr'}}];
 }
-const lang:string = Astro.params.lang;
+const lang: string = Astro.params.lang;
 ---
 
-<html style='scroll-behavior: smooth;' lang={lang}>
-    <heade>
+<script client:load>
+    const textToAnimate = 'ASTRO';
+    let animatedHash = 'ASTRO';
+    const filler = '_';
+    const totalFillers = 12;
+    let prefixFillers = 0;
+    let step = 1;
+
+    setInterval(() => {
+        // probably should've used heuristics instead of just bruteforcing
+        const urlHash = location.hash;
+
+        const used = ['intro', 'portfolio', 'skills', 'about', 'contact'].some((item) => {
+            return urlHash == '#' + item;
+        });
+        if (used) return;
+
+        animatedHash = '#' + filler.repeat(prefixFillers) + textToAnimate + filler.repeat(totalFillers - prefixFillers) +
+            '#';
+
+        location.replace(`${animatedHash}`);
+
+        // increment/decrement
+        // console.log(prefixFillers, totalFillers);
+        if (prefixFillers == 12) {
+            step = -1;
+        } else if (prefixFillers == 0) {
+            step = 1;
+        }
+        prefixFillers += step;
+    }, 500);
+</script>
+
+
+<html lang={lang}>
+    <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>Astronaut</title>
-    </heade>
+    </head>
     <body class="text-white bg-gray-900 overflow-x-hidden">
         <SharedLayout>
             <Hero />

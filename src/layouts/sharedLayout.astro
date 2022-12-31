@@ -72,9 +72,9 @@ const classes = {
                         link.children[0].classList.remove('active');
                     }
                 );
-                document
-                    .getElementById('NavLink#' + document.location.href.split('#')[1])
-                    .classList.add('active');
+                const section = document
+                    .getElementById('NavLink#' + document.location.href.split('#')[1]);
+if(section) {section.classList.add('active');}
             });
         </script>
 
