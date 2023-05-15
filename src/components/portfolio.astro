@@ -3,10 +3,17 @@ import Icon from 'astro-icon';
 import {Image, Picture} from '@astrojs/image/components';
 // type sharedT = {hostingAddress: string, sourceCodeAddress: string, mediaAddress: string}
 const shared = {
-    hostingAddress: 'https://segfaulty.netlify/kdjfds/',
+    hostingAddress: 'anasouardini.online',
     sourceCodeAddress: 'https://wwww.github.com/segfaulty1',
-    mediaAddress: '/media/projects',
+    mediaAddress: '/media/projectsPreview',
 };
+const genLinks = (projectName)=>{
+  return {
+    mediaLink: `${shared.mediaAddress}/${projectName}.png`,
+    previewLink: `https://${projectName}.${shared.hostingAddress}`,
+    sourceCodeLink: `${shared.sourceCodeAddress}/${projectName}`,
+  }
+}
 
 type projectItemsT = {
     card: {
@@ -28,17 +35,92 @@ const projectItems: projectItemsT = [
         card: {
             width: 400,
             aspectRatio: '1:1',
-            mediaLink: `${shared.mediaAddress}/snipshare.png`,
-            previewLink: `${shared.hostingAddress}/snipshare`,
-            sourceCodeLink: `${shared.sourceCodeAddress}/snipeshare`,
+            ...genLinks('snipshare'),
         },
         details: {
-            title: 'SnipShare - snippet sharing',
-            idea: `The idea of this app is that code snippets of any programming language could be
-                shared around with other developers`,
-            obstacles: [['obstacle 1', 'I refactored the code']],
-            tools: ['html', 'css', 'tailwind', 'react', 'nodejs', 'expressjs', 'mysql'],
+            title: 'SnipShare: snippet sharing',
+            idea: `An app for sharing pieces of code with others, it also has the feature of granting access of one's
+                  account to another person which envolves a bit of authentication and authorization.`,
+            obstacles: [
+                [
+                    "I couldn't get google Auth to work",
+                    "I've just gone through their documentation despite it's longivity."
+                ],
+                [
+                    "I was losing a lot of time on tiny mistakes that would require a lot of debugging.",
+                    "I introduced TypeScript to the project which reduced the effectiveness of those pain pionts"
+                ],
+                [
+                    `I got slowed down by the fact that I couldn't revert back to some old code; my git commits
+                    weren't professional`,
+                    `I learned how to write a proper git commit, after which I got really
+                    confortable with browsing git's history whenever I needed.`
+                ],
+                // [
+                //     `I had to spend a lot of time convincing other people to use this project in order to give me feedback.`,
+                //     `I overcame this problem thanks to a very kind person on discord, who recommended I add a way to easily
+                //     navigate between accounts and default values in forms so that they're not required to think too much about
+                //     it, etc. It worked like charm, people actually enjoyed using it.`
+                // ]
+                      ],
+            tools: [
+                    'html', 'css', 'tailwind', 'js', 'react', 'react-icons', 'react-auto-animate', 'monaco editor',
+                    'nodejs', 'expressjs', 'axios', 'bcrypt', 'multer', 'passportjs', 'jwt', 'google Auth2.0', 'SSE', 'zod',
+                    'mysql', 'vite'
+                  ],
         },
+    },
+    {
+      card: {
+          width: 400,
+          aspectRatio: '1:1',
+          ...genLinks('smartteam'),
+      },
+      details: {
+        title: 'SmartTeam: for managing teams/projects',
+        idea: `I've made a really typical project (todo app) but I wasn't satisfied with it due to its simplicity,
+              after which I decided to make another complex version of it, instead of just managing tasks, this one
+              is about managing tasks within projects within groups of projects.`,
+        obstacles: [
+          [
+            `The structure of the database was a bit comfusing and I couldn't wrap my head around it.`,
+            `I used a whiteboard tool to write my ideas down and compare them to filter down the worst ones
+              and start working as fast as possible.`
+          ],
+          [
+            `I got really stuck trying to hack around the inherintly restrictive nature of the REST protocol.`,
+            `Sometimes, standards can get in your way, and you can't help it but to take the non-standard route.`
+          ],
+          [
+            `I got to a point where I couldn't get any further with the project due to the complexity cumulated over time.`,
+            `Refactoring was the only solution I could think about, I realized that I should've been refactoring more frequently.`
+          ]
+        ],
+        tools: [
+                'html', 'css', 'tailwind', 'js', 'react', 'react-icons', 'react-query', 'react-table', 'typescript',
+                'nodejs', 'expressjs', 'axios', 'Oauth(google & github)', 'jwt', 'Bcrypt', 'nodemailer', 'mysql', 'vite'
+                ],
+      },
+    },
+    {
+      card: {
+        width: 400,
+        aspectRatio: '1:1',
+        ...genLinks('algolizer'),
+      },
+      details: {
+          title: 'Algolizer: algorithms visualizer',
+          idea: `The project highlights the "performance" difference between algorithms and data structues.
+                 It makes it easier to spot those differences and understand that it's not just black and white
+                 and it's not always about saving CPU cycles.`,
+          obstacles: [
+            [
+              `I couldn't get each algorithm to run in a separate thread/web worker without spending too much time on this.`,
+              `I just re-invented the wheel, by writing a really simple "context switcher".`
+            ]
+          ],
+          tools: ['html', 'css', 'tailwind', 'js', 'react', 'typescript', 'react-chartjs-2'],
+      },
     },
 ];
 ---
