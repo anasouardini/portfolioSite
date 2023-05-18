@@ -4,7 +4,7 @@ import {Image, Picture} from '@astrojs/image/components';
 // type sharedT = {hostingAddress: string, sourceCodeAddress: string, mediaAddress: string}
 const shared = {
     hostingAddress: 'anasouardini.online',
-    sourceCodeAddress: 'https://wwww.github.com/segfaulty1',
+    sourceCodeAddress: 'https://www.github.com/segfaulty1',
     mediaAddress: '/media/projectsPreview',
 };
 const genLinks = (projectName)=>{
@@ -33,8 +33,8 @@ type projectItemsT = {
 const projectItems: projectItemsT = [
     {
         card: {
-            width: 400,
-            aspectRatio: '1:1',
+            width: 910,
+            aspectRatio: '910:783',
             ...genLinks('snipshare'),
         },
         details: {
@@ -71,8 +71,8 @@ const projectItems: projectItemsT = [
     },
     {
       card: {
-          width: 400,
-          aspectRatio: '1:1',
+          width: 977,
+          aspectRatio: '977:744',
           ...genLinks('smartteam'),
       },
       details: {
@@ -105,8 +105,8 @@ const projectItems: projectItemsT = [
     },
     {
       card: {
-        width: 400,
-        aspectRatio: '1:1',
+        width: 837,
+        aspectRatio: '837:767',
         ...genLinks('algolizer'),
       },
       details: {
@@ -208,6 +208,7 @@ const projectItems: projectItemsT = [
                                     return (
                                         <a
                                             href={button[2]}
+                                            target='_blank'
                                             class="w-max text-primary border-[1px] border-primary px-3 py-1 rounded-xl
                                             subtleHoverSlider group"
                                         >
