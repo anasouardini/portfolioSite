@@ -127,8 +127,7 @@ import SocialMedia from './shared/socialMedia.astro';
             <a
                 class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                         subtleHoverSlider group flex justify-center items-center`}
-                href="/media/anas_ouardini.pdf"
-                download="anas_ouardini.pdf"
+                id="resumeDownload"
             >
                 <!-- <Icon
                     name="ic:outline-file-download"
@@ -145,6 +144,35 @@ import SocialMedia from './shared/socialMedia.astro';
                 </svg>
                 Download resume
             </a>
+            <div class={`hidden flex gap-4`} id="resumeVersions">
+                <a 
+                    class={`text-primary capitalize px-4 py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
+                            subtleHoverSlider group`}
+                    href="/media/anas_ouardini_fr.pdf"
+                    download="anas_ouardini.pdf"
+                >French</a>
+                <a 
+                    class={`text-primary capitalize px-4 py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
+                            subtleHoverSlider group`}
+                    href="/media/anas_ouardini.pdf"
+                    download="anas_ouardini.pdf"
+                >English</a>
+            </div>
+            <script client:load>
+                const resumeDownloadButton = document.querySelector('a#resumeDownload');
+                const resumeDownloadVersions = document.querySelector('div#resumeVersions');
+                console.log(resumeDownloadButton, resumeDownloadVersions)
+                resumeDownloadButton.addEventListener('click', (e)=>{
+                    if(e.target === e.currentTarget){
+                        resumeDownloadVersions.classList.remove('hidden');
+                        e.target.classList.add('hidden');
+                    }
+                });
+                resumeDownloadVersions.addEventListener('click', (e)=>{
+                    resumeDownloadButton.classList.remove('hidden');
+                    e.currentTarget.classList.add('hidden');
+                });
+            </script>
         </div>
     </div>
     <style>
