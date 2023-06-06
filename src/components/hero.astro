@@ -23,7 +23,6 @@ import SocialMedia from './shared/socialMedia.astro';
     </style>
     <div class="z-10 gradient-70 animate-loadFromLeft">
         <p
-            aria-label="my name"
             class="text-primary capitalize uppercase text-xl tracking-wider mb-1"
         >
             I'm Anas
@@ -103,7 +102,7 @@ import SocialMedia from './shared/socialMedia.astro';
             With the help of sweat technologies.
         </p>
         <SocialMedia />
-        <div aria-label="social media links" class="flex flex-wrap gap-7 mt-8">
+        <div aria-label="Contact and resume (CV)" class="flex flex-wrap gap-7 mt-8">
             <a
                 class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                         subtleHoverSlider group flex justify-center items-center`}
@@ -125,6 +124,7 @@ import SocialMedia from './shared/socialMedia.astro';
                 Get in Touch</a
             >
             <a
+                href="#intro"
                 class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                         subtleHoverSlider group flex justify-center items-center`}
                 id="resumeDownload"
