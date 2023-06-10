@@ -22,36 +22,30 @@ import SocialMedia from './shared/socialMedia.astro';
         }
     </style>
     <div class="z-10 gradient-70 animate-loadFromLeft">
-        <p
-            class="text-primary capitalize uppercase text-xl tracking-wider mb-1"
-        >
-            I'm Anas
-        </p>
         <!-- hero title -->
         <script>
             const titleLetters = document.getElementById('heroTitle').children;
-
-            // loop
-            {
-                let i = 0;
-                setInterval(() => {
-                    if (i == titleLetters.length) {
-                        i = 0;
-                        return;
-                    }
-
-                    titleLetters[i].classList.toggle('text-primary');
-
-                    i++;
-                }, 100);
-            }
+            let i = 0;
+            setInterval(() => {
+                if (i == titleLetters.length) {
+                    i = 0;
+                    return;
+                }
+                titleLetters[i].classList.toggle('text-primary');
+                i++;
+            }, 100);
         </script>
-        <h1 id="heroTitle" class="text-[2.5rem] mb-[1rem]">
-            {
-                'A Web Engineer'.split('').map((letter) => {
-                    return <span>{letter}</span>;
-                })
-            }
+        <h1 class="text-[2.5rem] mb-[1rem]">
+            <span class="text-primary capitalize uppercase text-xl tracking-wider mb-1">
+                I'm Anas
+            </span>
+            <div id="heroTitle">
+                {
+                    'A Web Engineer'.split('').map((letter) => {
+                        return <span>{letter}</span>;
+                    })
+                }
+            </div>
         </h1>
 
         <p class={`max-w-[25rem] leading-relaxed first-letter:uppercase text-xl`}>
@@ -145,30 +139,31 @@ import SocialMedia from './shared/socialMedia.astro';
                 Download resume
             </a>
             <div class={`hidden flex gap-4`} id="resumeVersions">
-                <a 
+                <a
                     class={`text-primary capitalize px-4 py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                             subtleHoverSlider group`}
                     href="/media/anas_ouardini_fr.pdf"
-                    download="anas_ouardini.pdf"
-                >French</a>
-                <a 
+                    download="anas_ouardini.pdf">French</a
+                >
+                <a
                     class={`text-primary capitalize px-4 py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                             subtleHoverSlider group`}
                     href="/media/anas_ouardini.pdf"
-                    download="anas_ouardini.pdf"
-                >English</a>
+                    download="anas_ouardini.pdf">English</a
+                >
             </div>
             <script client:load>
                 const resumeDownloadButton = document.querySelector('a#resumeDownload');
-                const resumeDownloadVersions = document.querySelector('div#resumeVersions');
-                console.log(resumeDownloadButton, resumeDownloadVersions)
-                resumeDownloadButton.addEventListener('click', (e)=>{
-                    if(e.target === e.currentTarget){
+                const resumeDownloadVersions =
+                    document.querySelector('div#resumeVersions');
+                console.log(resumeDownloadButton, resumeDownloadVersions);
+                resumeDownloadButton.addEventListener('click', (e) => {
+                    if (e.target === e.currentTarget) {
                         resumeDownloadVersions.classList.remove('hidden');
                         e.target.classList.add('hidden');
                     }
                 });
-                resumeDownloadVersions.addEventListener('click', (e)=>{
+                resumeDownloadVersions.addEventListener('click', (e) => {
                     resumeDownloadButton.classList.remove('hidden');
                     e.currentTarget.classList.add('hidden');
                 });

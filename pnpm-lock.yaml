@@ -35,6 +35,9 @@ dependencies:
   astro-robots-txt:
     specifier: ^0.5.0
     version: 0.5.0
+  astro-seo:
+    specifier: ^0.7.4
+    version: 0.7.4
   prettier:
     specifier: ^2.8.8
     version: 2.8.8
@@ -838,6 +841,10 @@ packages:
     dependencies:
       valid-filename: 4.0.0
       zod: 3.21.4
+    dev: false
+
+  /astro-seo@0.7.4:
+    resolution: {integrity: sha512-E+wJmxOnvBRjgzVctdGk/VdwoEqeQ6Q/KgVW2wRBXZWJVDgOweB32Da/UiH0/FpGncPzo2daOrc08DNn5wTanw==}
     dev: false
 
   /astro@1.9.2:
