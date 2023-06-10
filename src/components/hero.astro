@@ -156,7 +156,6 @@ import SocialMedia from './shared/socialMedia.astro';
                 const resumeDownloadButton = document.querySelector('a#resumeDownload');
                 const resumeDownloadVersions =
                     document.querySelector('div#resumeVersions');
-                console.log(resumeDownloadButton, resumeDownloadVersions);
                 resumeDownloadButton.addEventListener('click', (e) => {
                     if (e.target === e.currentTarget) {
                         resumeDownloadVersions.classList.remove('hidden');

@@ -1,1 +1,106 @@
-<script>location.replace('/en')</script>
+---
+import '../index.css';
+
+import SharedLayout from '../layouts/sharedLayout.astro';
+import Hero from '../components/hero.astro';
+import About from '../components/about.astro';
+import Skills from '../components/skills.astro';
+import Portfolio from '../components/portfolio.astro';
+import Contact from '../components/contact.astro';
+
+export function getStaticPaths() {
+    return [{params: {lang: 'en'}}, {params: {lang: 'fr'}}];
+}
+const lang: string = Astro.params.lang;
+---
+
+<script client:load defer>
+    const textToAnimate = 'ASTRO';
+    let animatedHash = 'ASTRO';
+    const filler = '_';
+    const totalFillers = 12;
+    let prefixFillers = 0;
+    let step = 1;
+
+    setInterval(() => {
+        // probably should've used heuristics instead of just bruteforcing
+        const urlHash = location.hash;
+
+        const used = ['intro', 'portfolio', 'skills', 'about', 'contact'].some((item) => {
+            return urlHash == '#' + item;
+        });
+        if (used) return;
+
+        animatedHash =
+            '#' +
+            filler.repeat(prefixFillers) +
+            textToAnimate +
+            filler.repeat(totalFillers - prefixFillers) +
+            '#';
+
+        location.replace(`${animatedHash}`);
+
+        // increment/decrement
+        // console.log(prefixFillers, totalFillers);
+        if (prefixFillers == 12) {
+            step = -1;
+        } else if (prefixFillers == 0) {
+            step = 1;
+        }
+        prefixFillers += step;
+    }, 500);
+
+    // setInterval(function () {
+    //     let adBoxEl= document.getElementById("ad-box");
+    //     let hasAdBlock = false;
+
+    //     if( !adBoxEl
+    //         || adBoxEl.clientHeight == 0
+    //         || window.getComputedStyle(adBoxEl)?.display === 'none')
+    //     {
+    //         console.log(adBoxEl);
+    //         console.log(adBoxEl.clientHeight == 0);
+    //         console.log(window.getComputedStyle(adBoxEl)?.display === 'none');
+    //         hasAdBlock = true;
+    //     }
+
+    //     console.log({hasAdBlock});
+    // }, 1000);
+</script>
+
+<html lang={lang}>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <meta
+            name="description"
+            content=`I'm anas ouardini, a web engineer, and this is my personal website.
+                                          My projects, social media and my blog are linked here.
+                                          CLICK IT! YOU MIGHT LIKE WHAT YOU SEE.`
+        />
+        <title>
+            Anas Ouardini's personal website - my web projects, social links, blog, etc
+        </title>
+    </head>
+    <body class="text-white bg-gray-900 overflow-x-hidden">
+        <SharedLayout>
+            <Hero />
+            <Portfolio />
+            <Skills />
+            <About />
+            <Contact />
+        </SharedLayout>
+        <!-- <div
+            id="ad-box"
+            class="ad-box"
+            style=`background-color: transparent;
+                    height: 1px; width: 1px;
+                    position:fixed;top:0;left:0;`
+            aria-hidden="true">
+            &nbsp;
+        </div> -->
+    </body>
+</html>

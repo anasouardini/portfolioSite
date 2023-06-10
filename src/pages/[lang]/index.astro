@@ -14,7 +14,7 @@ export function getStaticPaths() {
 const lang: string = Astro.params.lang;
 ---
 
-<script client:load>
+<script client:load defer>
     const textToAnimate = 'ASTRO';
     let animatedHash = 'ASTRO';
     const filler = '_';
@@ -31,7 +31,11 @@ const lang: string = Astro.params.lang;
         });
         if (used) return;
 
-        animatedHash = '#' + filler.repeat(prefixFillers) + textToAnimate + filler.repeat(totalFillers - prefixFillers) +
+        animatedHash =
+            '#' +
+            filler.repeat(prefixFillers) +
+            textToAnimate +
+            filler.repeat(totalFillers - prefixFillers) +
             '#';
 
         location.replace(`${animatedHash}`);
@@ -45,8 +49,24 @@ const lang: string = Astro.params.lang;
         }
         prefixFillers += step;
     }, 500);
-</script>
 
+    // setInterval(function () {
+    //     let adBoxEl= document.getElementById("ad-box");
+    //     let hasAdBlock = false;
+
+    //     if( !adBoxEl
+    //         || adBoxEl.clientHeight == 0
+    //         || window.getComputedStyle(adBoxEl)?.display === 'none')
+    //     {
+    //         console.log(adBoxEl);
+    //         console.log(adBoxEl.clientHeight == 0);
+    //         console.log(window.getComputedStyle(adBoxEl)?.display === 'none');
+    //         hasAdBlock = true;
+    //     }
+
+    //     console.log({hasAdBlock});
+    // }, 1000);
+</script>
 
 <html lang={lang}>
     <head>
@@ -55,10 +75,15 @@ const lang: string = Astro.params.lang;
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <meta name="description" content=`I'm anas ouardini, a web engineer, and this is my personal website.
+        <meta
+            name="description"
+            content=`I'm anas ouardini, a web engineer, and this is my personal website.
                                           My projects, social media and my blog are linked here.
-                                          CLICK IT! YOU MIGHT LIKE WHAT YOU SEE.` />
-        <title>Anas Ouardini's personal website - my web projects, social links, blog, etc</title>
+                                          CLICK IT! YOU MIGHT LIKE WHAT YOU SEE.`
+        />
+        <title>
+            Anas Ouardini's personal website - my web projects, social links, blog, etc
+        </title>
     </head>
     <body class="text-white bg-gray-900 overflow-x-hidden">
         <SharedLayout>
@@ -68,5 +93,14 @@ const lang: string = Astro.params.lang;
             <About />
             <Contact />
         </SharedLayout>
+        <!-- <div
+            id="ad-box"
+            class="ad-box"
+            style=`background-color: transparent;
+                    height: 1px; width: 1px;
+                    position:fixed;top:0;left:0;`
+            aria-hidden="true">
+            &nbsp;
+        </div> -->
     </body>
 </html>
