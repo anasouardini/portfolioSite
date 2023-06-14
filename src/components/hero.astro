@@ -37,7 +37,7 @@ import SocialMedia from './shared/socialMedia.astro';
         </script>
         <h1 class="text-[2.5rem] mb-[1rem]">
             <span class="text-primary capitalize uppercase text-xl tracking-wider mb-1">
-                I'm Anas
+                I'm Anas Ouardini
             </span>
             <div id="heroTitle">
                 {
@@ -98,6 +98,7 @@ import SocialMedia from './shared/socialMedia.astro';
         <SocialMedia />
         <div aria-label="Contact and resume (CV)" class="flex flex-wrap gap-7 mt-8">
             <a
+                aria-label="get in touch"
                 class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                         subtleHoverSlider group flex justify-center items-center`}
                 href="#contact"
@@ -118,6 +119,7 @@ import SocialMedia from './shared/socialMedia.astro';
                 Get in Touch</a
             >
             <a
+                aria-label="download resume"
                 href="#intro"
                 class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                         subtleHoverSlider group flex justify-center items-center`}
@@ -140,12 +142,14 @@ import SocialMedia from './shared/socialMedia.astro';
             </a>
             <div class={`hidden flex gap-4`} id="resumeVersions">
                 <a
+                    aria-label="download english resume"
                     class={`text-primary capitalize px-4 py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                             subtleHoverSlider group`}
                     href="/media/anas_ouardini_public.pdf"
                     download="anas_ouardini_public.pdf">English</a
                 >
                 <a
+                    aria-label="download english resume"
                     class={`text-primary capitalize px-4 py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
                             subtleHoverSlider group`}
                     href="/media/anas_ouardini_public.pdf"
@@ -180,7 +184,6 @@ import SocialMedia from './shared/socialMedia.astro';
         }
     </style>
     <div
-        aria-label="astronaut icon"
         class="w-[190px] absolute flex astro astro>:hidden animate-loadFromRight"
     >
         <!-- <Icon class="text-primary/50 w-2xl" name="fa-solid:user-astronaut" /> -->

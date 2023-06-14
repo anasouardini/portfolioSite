@@ -46,19 +46,20 @@ const classes = {
         aria-label="logo"
         class="pt-1 hover:rotate-[2deg] hover:scale-[1.1] duration-300 text-primary group font-bold tracking-widest uppercase"
     >
-        <svg
-            class="inline"
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="32"
-            viewBox="5 3 14 27"
-        >
-            <path
-                fill="rgb(101 163 13)"
-                d="M18.97 19.757L15.35 5.272A2.996 2.996 0 0 0 12.437 3h-.877a2.996 2.996 0 0 0-2.91 2.272L5.03 19.757a1 1 0 0 0 1.94.486L8.28 15h7.44l1.31 5.243a1 1 0 0 0 1.94-.486ZM8.78 13l1.811-7.242a.998.998 0 0 1 .97-.758h.878a.998.998 0 0 1 .97.758L15.219 13Z"
-            ></path>
-        </svg>
-        <a href="#intro">nas</a>
+        <a aria-label="intro section" href="#intro">
+            <svg
+                class="inline"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="32"
+                viewBox="5 3 14 27"
+            >
+                <path
+                    fill="rgb(101 163 13)"
+                    d="M18.97 19.757L15.35 5.272A2.996 2.996 0 0 0 12.437 3h-.877a2.996 2.996 0 0 0-2.91 2.272L5.03 19.757a1 1 0 0 0 1.94.486L8.28 15h7.44l1.31 5.243a1 1 0 0 0 1.94-.486ZM8.78 13l1.811-7.242a.998.998 0 0 1 .97-.758h.878a.998.998 0 0 1 .97.758L15.219 13Z"
+                ></path>
+            </svg>
+        nas</a>
     </div>
     <nav
         aria-label="wide screen navigation"
@@ -84,6 +85,7 @@ if(section) {section.classList.add('active');}
                     return (
                         <li>
                             <a
+                                aria-label={link}
                                 id={`NavLink#${link}`}
                                 href={`#${link}`}
                                 class={classes.link}
@@ -113,11 +115,11 @@ if(section) {section.classList.add('active');}
             hidden nav<:hidden`}
 >
     <ul class="flex flex-col gap-3">
-        <li><a href="#intro" class={classes.link}>intro</a></li>
-        <li><a href="#portfolio" class={classes.link}>Portfolio</a></li>
-        <li><a href="#skills" class={classes.link}>Skills</a></li>
-        <li><a href="#about" class={classes.link}>About</a></li>
-        <li><a href="#contact" class={classes.link}>Contact</a></li>
+        <li><a aria-label="intro section" href="#intro" class={classes.link}>intro</a></li>
+        <li><a aria-label="portfolio section" href="#portfolio" class={classes.link}>Portfolio</a></li>
+        <li><a aria-label="skills section" href="#skills" class={classes.link}>Skills</a></li>
+        <li><a aria-label="about section" href="#about" class={classes.link}>About</a></li>
+        <li><a aria-label="contact section" href="#contact" class={classes.link}>Contact</a></li>
     </ul>
 </nav>
 
