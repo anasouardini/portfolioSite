@@ -75,11 +75,14 @@ const lang: string = Astro.params.lang;
         <link rel="sitemap" href="/sitemap-index.xml" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+
+        <link rel="canonical" href={Astro.url} />
+
         <meta
             name="description"
             content=`I'm anas ouardini, a web engineer, and this is my personal website.
-                                          My projects, social media and my blog are linked here.
-                                          CLICK IT! YOU MIGHT LIKE WHAT YOU SEE.`
+                     My projects, social media and my blog are linked here.
+                     CLICK IT! YOU MIGHT LIKE WHAT YOU SEE.`
         />
         <title>
             Anas Ouardini's personal website - my web projects, social links, blog, etc
