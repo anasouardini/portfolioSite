@@ -85,17 +85,25 @@ const lang: string = Astro.params.lang;
                      CLICK IT! YOU MIGHT LIKE WHAT YOU SEE.`
         />
         <title>
-            Anas Ouardini's personal website - my web projects, social links, blog, etc
+            Anas Ouardini - personal website - my web projects, social links, blog, etc
         </title>
 
         <!-- Google tag (gtag.js) -->
+        <script>
+            if('localhost' == window.location.hostname){
+                console.log('GA has been disabled');
+                window['ga-disable-G-TV3YFNKPP4'] = true;
+            }
+        </script>
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-TV3YFNKPP4"></script>
         <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+            if('localhost' != window.location.hostname){
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
 
-            gtag('config', 'G-TV3YFNKPP4');
+                gtag('config', 'G-TV3YFNKPP4');
+            }
         </script>
 
     </head>
