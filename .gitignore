@@ -1,6 +1,3 @@
-# temp files
-netlify.toml
-
 # build output
 dist/
 todo.md
