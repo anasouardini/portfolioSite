@@ -1,15 +1,17 @@
 ---
 import Icon from 'astro-icon';
-import {Image, Picture} from '@astrojs/image/components';
+import { Image } from 'astro:assets';
+import snipshareImage from '../media/projectsPreview/snipshare.png';
+import smartTeamImage from '../media/projectsPreview/smartteam.png';
+import algolizerImage from '../media/projectsPreview/algolizer.png';
+
 // type sharedT = {hostingAddress: string, sourceCodeAddress: string, mediaAddress: string}
 const shared = {
     hostingAddress: 'anasouardini.online',
-    sourceCodeAddress: 'https://www.github.com/segfaulty1',
-    mediaAddress: '/media/projectsPreview',
+    sourceCodeAddress: 'https://www.github.com/segfaulty1'
 };
 const genLinks = (projectName)=>{
   return {
-    mediaLink: `${shared.mediaAddress}/${projectName}.png`,
     previewLink: `https://${projectName}.${shared.hostingAddress}`,
     sourceCodeLink: `${shared.sourceCodeAddress}/${projectName}`,
   }
@@ -35,6 +37,7 @@ const projectItems: projectItemsT = [
         card: {
             width: 910,
             aspectRatio: '910:783',
+            mediaLink: snipshareImage,
             ...genLinks('snipshare'),
         },
         details: {
@@ -73,6 +76,7 @@ const projectItems: projectItemsT = [
       card: {
           width: 977,
           aspectRatio: '977:744',
+            mediaLink: smartTeamImage,
           ...genLinks('smartteam'),
       },
       details: {
@@ -107,6 +111,7 @@ const projectItems: projectItemsT = [
       card: {
         width: 837,
         aspectRatio: '837:767',
+        mediaLink: algolizerImage,
         ...genLinks('algolizer'),
       },
       details: {
@@ -160,12 +165,14 @@ const projectItems: projectItemsT = [
                             aria-label="project preview"
                             class="grow basis-0 flex flex-col items-center mt-[3rem] animate-loadFromUp"
                         >
-                            <Picture
+                            <Image
                                 class="min-w-[280px] sxs>:min-w-0 max-w-[40rem]"
                                 widths={[400, 600, 800]}
                                 aspectRatio={item.card.aspectRatio}
                                 formats={['webp']}
-                                src={`${item.card.mediaLink}`}
+                                loading="lazy"
+                                decoding="async"
+                                src={item.card.mediaLink}
                                 alt="project image"
                             />
 
