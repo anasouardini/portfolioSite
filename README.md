@@ -1,4 +1,4 @@
-# My Portfolio Site
+# [My Portfolio Site](https://anasouardini.online/)
 
 My personal portfolio web page where I list my skills and project. I finally got to try this cool piece of technology (Astro), it was a wonderful experience to explore numerous new things all within one project.
 
@@ -16,7 +16,7 @@ My design skills are not great, but I think this is the most good-looking UI I'v
 2. Typescript
 3. Astro
 4. Astro-icons
-5. Astro/iamge (build on top of squoosh)
+5. Astro/image (build on top of squoosh)
 6. Sharp (fine-grained control of image transformations)
 7. Astro/netlify (adapter for deploying to netlify)
 
