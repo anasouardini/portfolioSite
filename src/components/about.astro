@@ -14,17 +14,17 @@ const classes = {
     class="text-slate-50 pt-[6rem] px-main xs>:px-4"
 >
     <h2
-        class={`text-center capitalize text-2xl relative
-                    before:absolute
-                    before:border-b-4 before:border-b-primary
-                    before:w-[2.1rem] before:h-[48px]`}
+        class={`text-center capitalize text-2xl mb-[3rem]
+               w-full h-[48px]`}
     >
-        My <span class="text-primary">Story</span>
+        <span class="border-b-4 border-b-primary pb-2">
+            My story
+        </span>
     </h2>
     <div class="flex xs>:flex-col gap-6 flex-wrap justify-center">
         <div
             aria-label="story text"
-            class="mt-[3rem] grow min-w-[300px] xs>:min-w-[200px] max-w-xl basis-0 flex flex-col justify-center"
+            class="grow min-w-[300px] xs>:min-w-[200px] max-w-xl basis-0 flex flex-col justify-center"
         >
             <p class="mb-3">
                 As I have always been fascinated by technology
@@ -270,7 +270,7 @@ const classes = {
             </p>
         </div>
         <table
-            class={`${classes.tableBorder} mt-[3rem] grow-0 min-w-max xs>:min-w-min basis-0`}
+            class={`${classes.tableBorder} grow-0 min-w-max xs>:min-w-min basis-0`}
         >
             <tr class={`${classes.tableBorder} ${classes.selectiveHighlight}`}>
                 <td class={`${classes.tableBorder} ${classes.colPadding}`}>2011</td>

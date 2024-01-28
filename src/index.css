@@ -16,6 +16,8 @@ section {
 }
 
 html{
+    --accent: #FC6736;
+
     font-size: min(calc(1rem + 6 * (20vw / 680)), 1.35rem);
     font-family: "Roboto", sans-serif;
     scroll-behavior: smooth;
@@ -29,13 +31,13 @@ h1, h2{
 body::scrollbar,
 .scrollbar::scrollbar {
     width: 6px;
-    background-color: rgb(00 130 0);
+    background-color: var(--accent)
 }
 
 body::scrollbar:horizontal,
 .scrollbar::scrollbar:horizontal {
     width: 6px;
-    background-color: rgb(00 130 0);
+    background-color: var(--accent);
 }
 
 body::-webkit-scrollbar,
@@ -51,7 +53,7 @@ body::-webkit-scrollbar:horizontal,
 body::-webkit-scrollbar-thumb,
 .scrollbar::-webkit-scrollbar-thumb {
     border-radius: 5px;
-    background-color: rgb(00 130 0);
+    background-color: var(--accent);
 }
 
 /* call to action buttons */

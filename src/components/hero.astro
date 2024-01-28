@@ -23,7 +23,7 @@ import SocialMedia from './shared/socialMedia.astro';
     </style>
     <div class="z-10 gradient-70 animate-loadFromLeft">
         <!-- hero title -->
-        <script>
+        <!-- <script>
             const titleLetters = document.getElementById('heroTitle').children;
             let i = 0;
             setInterval(() => {
@@ -34,17 +34,19 @@ import SocialMedia from './shared/socialMedia.astro';
                 titleLetters[i].classList.toggle('text-primary');
                 i++;
             }, 100);
-        </script>
+        </script> -->
         <h1 class="text-[2.5rem] mb-[1rem]">
-            <span class="text-primary capitalize uppercase text-xl tracking-wider mb-1">
+            <span class="capitalize text-xl tracking-wider mb-1">
                 I'm Anas Ouardini
             </span>
             <div id="heroTitle">
-                {
+                A Web
+                <span class="text-primary">Engineer</span>
+                <!-- {
                     'A Web Engineer'.split('').map((letter) => {
                         return <span>{letter}</span>;
                     })
-                }
+                } -->
             </div>
         </h1>
 
@@ -99,7 +101,7 @@ import SocialMedia from './shared/socialMedia.astro';
         <div aria-label="Contact and resume (CV)" class="flex flex-wrap gap-7 mt-8">
             <a
                 aria-label="get in touch"
-                class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
+                class={`capitalize border-[1px] px-3 py-2 rounded-xl
                         subtleHoverSlider group flex justify-center items-center`}
                 href="#contact"
             >
@@ -109,7 +111,7 @@ import SocialMedia from './shared/socialMedia.astro';
                 /> -->
                 <svg
                     viewBox="0 0 512 512"
-                    class="mr-2 w-6 inline text-primary group-hover:rotate-[35deg] duration-300 astro-MKSQWLAR"
+                    class="mr-2 w-6 text-primary inline group-hover:rotate-[35deg] duration-300 astro-MKSQWLAR"
                     astro-icon="ion:paper-airplane"
                     ><path
                         fill="currentColor"
@@ -121,7 +123,7 @@ import SocialMedia from './shared/socialMedia.astro';
             <a
                 aria-label="download resume"
                 href="#intro"
-                class={`text-primary capitalize py-[5px] border-[1px] border-primary px-3 py-2 rounded-xl
+                class={`text-white capitalize py-[5px] border-[1px] border-white px-3 py-2 rounded-xl
                         subtleHoverSlider group flex justify-center items-center`}
                 id="resumeDownload"
             >
@@ -184,7 +186,7 @@ import SocialMedia from './shared/socialMedia.astro';
         }
     </style>
     <div
-        class="w-[190px] absolute flex astro astro>:hidden animate-loadFromRight"
+        class="w-[190px] text-primary absolute flex astro astro>:hidden animate-loadFromRight"
     >
         <!-- <Icon class="text-primary/50 w-2xl" name="fa-solid:user-astronaut" /> -->
         <!-- <Icon class='absolute z-20 w-2xl' name='mdi:fire-circle'/> -->
