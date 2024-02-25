@@ -6,6 +6,10 @@ import robotsTxt from "astro-robots-txt";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://anasouardini.online',
-  integrations: [tailwind(), sitemap(), robotsTxt() ],
+  integrations: [tailwind(), sitemap({
+    customPages: [
+      'https://anasouardini.online/media/anas-ouardini.png',
+      'https://anasouardini.online/media/anas-ouardini.jpg'
+    ]}), robotsTxt() ],
   server: {port: 3000}
 });
